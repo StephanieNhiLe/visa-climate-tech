@@ -1,6 +1,6 @@
 ## create-vite
 
-Everything you need to build a Svelte project, powered by [`create-vite`](https://github.com/vitejs/vite/tree/main/packages/create-vite).
+Everything you need to build a Vite project, powered by [`create-vite`](https://github.com/vitejs/vite/tree/main/packages/create-vite).
 
 ## Creating a project
 
