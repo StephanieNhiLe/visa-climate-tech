@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "axios": "^1.7.2",
+    "kill-port": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1"
