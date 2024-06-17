@@ -12,15 +12,5 @@ def get_message():
         }
     )
 
-# @app.route("/api/users", methods=["GET"])
-# def get_users():
-#     return jsonify(
-#         {
-#            "users": [
-#                 'Alex', 'Bob', 'Charlie'
-#            ]     
-#         }
-#     )
-
 if __name__ == "__main__":
     app.run(debug=True,port=8080)
