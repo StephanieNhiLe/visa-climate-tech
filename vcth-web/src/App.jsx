@@ -25,8 +25,44 @@ function App(){
     }
   };
 
+  const loginApi = async () => {
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/login');
+      console.log('Connection is ' + response.data.message + '!')
+      setMessage(response.data.message);
+    }
+    catch (error) {
+      console.error('Error fetching data:',error);
+    }
+  };
+
+  const logoutApi = async () => {
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/logout');
+      console.log('Connection is ' + response.data.message + '!')
+      setMessage(response.data.message);
+    }
+    catch (error) {
+      console.error('Error fetching data:',error);
+    }
+  };
+
+  const registerApi = async () => {
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/register');
+      console.log('Connection is ' + response.data.message + '!') 
+      setMessage(response.data.message);
+    }   
+    catch (error) {
+      console.error('Error fetching data:',error);
+    } 
+  };
+
   useEffect(() => {
     fetchAPI();
+    loginApi();
+    logoutApi();
+    registerApi();
   }, []);
 
   return (

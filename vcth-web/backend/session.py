@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, session
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.secret_key = "secret_key"

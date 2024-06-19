@@ -10,7 +10,7 @@ api = Api(app)  # API
 
 cors = CORS(app, origins='*', allow_headers=[
     "Content-Type", "Authorization  ", "Access-Control-Allow-Credentials"], supports_credentials=True)     # CORS
-@app.route("http://127.0.0.1:5000/api/messages", methods=["GET"])  
+@app.route("/api/messages", methods=["GET"])  
 def get_message():
     return jsonify(
         {
