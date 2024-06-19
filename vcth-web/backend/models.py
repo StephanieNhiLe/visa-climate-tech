@@ -1,4 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy # type: ignore
+from flask_sqlalchemy import SQLAlchemy 
 from uuid import uuid4
 
 db = SQLAlchemy()   # Database
