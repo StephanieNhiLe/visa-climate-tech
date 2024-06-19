@@ -16,7 +16,7 @@ function App(){
 
   const fetchAPI = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/messages');
+      const response = await axios.get('http://127.0.0.1:5000/api/messages');
       console.log('Connection is ' + response.data.message + '!');
       setMessage(response.data.message);
     }

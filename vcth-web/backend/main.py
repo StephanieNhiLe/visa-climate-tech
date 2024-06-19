@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, request, jsonify
 from flask_restful import Api, Resource, reqparse
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -18,5 +18,5 @@ def get_message():
         }
     )
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True,port=5000)
