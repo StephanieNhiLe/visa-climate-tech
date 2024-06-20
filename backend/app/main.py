@@ -16,17 +16,67 @@ CORS(app, origins='*', allow_headers=[
 
 @app.route('/api/messages', methods=['GET'])
 def get_data():
-    # return {"message": "Hello, Visa Hack Team!"}
     return jsonify({
         'message': "successful!"
     })
 
 
-@app.route('/api/verify_user', methods=['POST'])
-def check_user():
+@app.route('/api/account_details', methods=['POST'])
+def account_details():
     data = request.get_json()
-    username = data.get('username')
-    password = data.get('password')
+
+    if not data:
+        return jsonify({
+            'success': False,
+            'message': 'credentials are required'
+        }), 400
+
+    username = data.get('username', None)
+    password = data.get('password', None)
+
+    if not username or not password:
+        return jsonify({
+            'access': False,
+            'Message': "username and password are required"
+        }), 400
+
+    try:
+
+        account_info = db_op.getUserAccount(username, password)
+
+        if account_info:
+            return jsonify({
+                "access": True,
+                "account_id": account_info.account_id,
+                "first_name": account_info.first_name,
+                "last_name": account_info.last_name,
+                "persona": account_info.persona
+            }), 200
+        else:
+            return jsonify({
+                "access": False,
+                "message": "User account does not exist"
+            }), 404
+
+    except Exception as ex:
+        return jsonify({
+            "access": False,
+            "message": f"An error occured with exeption {ex}"
+        }), 500
+
+
+@app.route('/api/verify_user', methods=['POST'])
+def verify_user():
+    data = request.get_json()
+
+    if not data:
+        return jsonify({
+            'success': False,
+            'message': 'credentials are required'
+        }), 400
+
+    username = data.get('username', None)
+    password = data.get('password', None)
 
     if not username or not password:
         return jsonify({
