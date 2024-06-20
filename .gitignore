@@ -25,3 +25,6 @@ venv
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#Mock Business Data
+backend/app/Mock_Businesses.csv
