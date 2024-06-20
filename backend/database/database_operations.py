@@ -1,8 +1,8 @@
-from database_utils import checkAccountExistanceQuery
-from database_connection import database_connection
+from .database_utils import checkAccountExistanceQuery
+from .database_connection import database_connection
 
 
-class database_operations:
+class DB_Operation:
     def __init__(self):
         db_connection = database_connection()
         self._connection = db_connection.get_connection()
@@ -24,6 +24,6 @@ class database_operations:
 
 if __name__ == "__main__":
     # Sample ways this script would work
-    db_op = database_operations()
+    db_op = DB_Operation()
     print(db_op.checkUserHasAccount("bob", "pas121"))
     print(db_op.checkUserHasAccount("mike_j", "securepass"))
