@@ -106,7 +106,29 @@ for driver in pyodbc.drivers()
 
 As a side note 17 should work you will see a lot of guides used this version but 18 should work for our needs.
 
-Based on the specification in the docker container you need to fill out the following fields in the `.env` file` DB_DOMAIN, DB_PORT,DB_NAME, DB_USERNAME, 
-DB_PASSWORD, DB_DRIVER`. Once these are congifured the database feature can be met.
-
 You can use [Azure Data Studio](https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall) as a debugging tool, for making sure you can connect to the container before applying the fields for the python program. As well as running queries for additional features.
+
+- Now that you have dependencies and docker running lets actually configure the enviroment so that python can find the container
+
+1. Create a `.env` file at the root of this project so near this readMe. You only ever need one.
+2. You need to onboard the following fields
+
+```
+# Database connection
+DB_DOMAIN = "localhost"
+DB_PORT = "1401"
+DB_NAME = "VisaHack"
+DB_USERNAME = <You fill in>
+DB_PASSWORD = <you fill in>
+DB_DRIVER = '{ODBC Driver 18 for SQL Server}'
+```
+
+The driver may be of a different version such as 17 this depends on the driver you installed on a previous step remember that you can figure it out by running the short python script.
+
+3. A big tip is to use Azure data studio to look back and forth to see that you have the fields matched up
+
+Some mistakes or potential bugs you might want to be on the lookout for:
+
+- making the port 14001 instead of 1401 if your container shows the former you may want to edit it in the containers tab
+- your password is incorrect you can check in the docker container under info and convert it to json to easily check what the password is
+- Given that you may want to check that the datbase connection file works before using the flask application you would have to change certain lines. A good place to start is `database_connection.py` since it can work by itself.
