@@ -27,4 +27,5 @@ yarn-debug.log*
 yarn-error.log*
 
 #Mock Business Data
-backend/app/Mock_Businesses.csv
+backend/app/mockData/Mock_Businesses.csv
+backend/app/mockData/mockBusi.json
