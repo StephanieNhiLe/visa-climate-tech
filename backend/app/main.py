@@ -1,6 +1,7 @@
 from database.database_operations import DB_Operation
 from flask_cors import CORS
 from flask import Flask, request, jsonify
+import pandas as pd
 
 import sys
 sys.path.append("..")
@@ -12,6 +13,31 @@ CORS(app, origins='*', allow_headers=[
     "Content-Type", "Authorization",
     "Access-Control-Allow-Credentials"],
     supports_credentials=True)
+
+#mock businesses return endpoint
+@app.route('/api/businesses', methods=['GET'])
+def get_businesses():
+    #grab top category from frontend 
+    category = request.args.get('Category')
+    if not category:
+        return jsonify({
+            'success': False,
+            'message': 'category is required'
+        }), 400
+    try:
+        mb = pd.read_csv('mockData/Mock_Businesses.csv')
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': f'An error occurred: {e}'
+        }), 500
+    #filter by category
+    filtered_businesses = mb[mb['Category'] == category]
+    businesses = filtered_businesses.to_dict(orient='records')
+    return jsonify({
+        'success': True,
+        'businesses': businesses
+    }), 200
 
 
 @app.route('/api/messages', methods=['GET'])
