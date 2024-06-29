@@ -37,3 +37,13 @@ def getAccountDetails(username, password):
     INNER JOIN 
         UserInfo AS UI on UI.account_id = BD.account_id
     """
+
+def getBusinessDetails(category):
+    return f"""
+    SELECT
+        [business_name] 
+    FROM
+        [VisaHack].[dbo].[businesses]
+    WHERE
+        [category] = '{category}'
+    """

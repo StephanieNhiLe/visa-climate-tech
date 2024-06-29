@@ -15,29 +15,33 @@ CORS(app, origins='*', allow_headers=[
     supports_credentials=True)
 
 #mock businesses return endpoint
-@app.route('/api/businesses', methods=['GET'])
-def get_businesses():
-    #grab top category from frontend 
-    category = request.args.get('Category')
+@app.route('/api/businesses', methods=['POST'])
+def get_businesses():  
+    data = request.get_json()
+    if not data:
+        return jsonify({
+            'success': False,
+            'message': 'Category is required'
+        }), 400
+    
+    category = data.get('category', None)
     if not category:
         return jsonify({
             'success': False,
-            'message': 'category is required'
+            'message': 'Category is required'
         }), 400
-    try:
-        mb = pd.read_csv('mockData/Mock_Businesses.csv')
+    try: 
+        business_data = db_op.getBusinessDetails(category)
+        if business_data:
+            return jsonify({
+                'success': True,
+                'businesses': business_data
+            }), 200
     except Exception as e:
         return jsonify({
             'success': False,
             'message': f'An error occurred: {e}'
-        }), 500
-    #filter by category
-    filtered_businesses = mb[mb['Category'] == category]
-    businesses = filtered_businesses.to_dict(orient='records')
-    return jsonify({
-        'success': True,
-        'businesses': businesses
-    }), 200
+        }), 500 
 
 
 @app.route('/api/messages', methods=['GET'])

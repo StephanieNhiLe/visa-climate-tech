@@ -1,4 +1,4 @@
-from .database_utils import checkAccountExistanceQuery, getAccountDetails
+from .database_utils import checkAccountExistanceQuery, getAccountDetails, getBusinessDetails
 from .database_connection import database_connection
 from collections import namedtuple
 import pyodbc
@@ -46,6 +46,21 @@ class DB_Operation:
         except pyodbc.Error as ex:
             print(f"Error querying the database: {ex}")
             raise
+
+    def getBusinessDetails(self, category: str) -> list:
+        query = getBusinessDetails(category)
+        try:
+            cursor = self._connection.cursor()
+            cursor.execute(query)
+
+            data = cursor.fetchall()
+            formatted_data = [business[0] for business in data]
+            return formatted_data
+            # return data
+        except pyodbc.Error as ex:
+            print(f"Error querying the database: {ex}")
+            raise
+
 
 
 if __name__ == "__main__":
