@@ -1,10 +1,14 @@
-from .database_utils import checkAccountExistanceQuery, getAccountDetails, getBusinessDetails
+from .database_utils import checkAccountExistanceQuery, getAccountDetails, getBusinessDetails, getMonthlySpendSummary, getOverallAvgSpend
 from .database_connection import database_connection
 from collections import namedtuple
 import pyodbc
 
 UserAccount = namedtuple(
     'UserAccount', ['account_id', 'first_name', 'last_name', 'persona'])
+
+MonthlySpend = namedtuple(
+    'MonthlySpend', ['month', 'total', 'average', 'minimum', 'maximum']
+)
 
 
 class DB_Operation:
@@ -56,12 +60,34 @@ class DB_Operation:
             data = cursor.fetchall()
             formatted_data = [business[0] for business in data]
             return formatted_data
-            # return data
+        except pyodbc.Error as ex:
+            print(f"Error querying the database: {ex}")
+            raise
+    
+    def getMonthlySpendSummary(self, account_id: str) -> list:
+        query = getMonthlySpendSummary(account_id)
+        try:
+            cursor = self._connection.cursor()
+            cursor.execute(query)
+
+            data = cursor.fetchall()
+            formatted_data = [MonthlySpend(*item) for item in data]
+            return formatted_data
         except pyodbc.Error as ex:
             print(f"Error querying the database: {ex}")
             raise
 
+    def getOverallAvgSpend(self, account_id: str) -> list:
+        query = getOverallAvgSpend(account_id)
+        try:
+            cursor = self._connection.cursor()
+            cursor.execute(query)
 
+            data = cursor.fetchone()[0] 
+            return data
+        except pyodbc.Error as ex:
+            print(f"Error querying the database: {ex}")
+            raise
 
 if __name__ == "__main__":
     # Sample ways this script would work mainly for testing

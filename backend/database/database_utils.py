@@ -47,3 +47,30 @@ def getBusinessDetails(category):
     WHERE
         [category] = '{category}'
     """
+
+def getMonthlySpendSummary(account_id):
+    return f"""
+    SELECT 
+        Month,
+        SUM(spend) AS Total,
+        AVG(spend) AS Average,
+        MIN(spend) AS Minimum,
+        MAX(spend) AS Maximum
+    FROM [VisaHack].[dbo].[cardData]
+    WHERE account_id = '{account_id}'
+    GROUP BY Month;
+    """
+
+def getOverallAvgSpend(account_id):
+    return f"""
+    -- Calculate overall average spend
+    SELECT AVG(Total) AS OverallAverageSpend
+    FROM (
+        SELECT 
+            Month,
+            SUM(spend) AS Total
+        FROM [VisaHack].[dbo].[cardData]
+        WHERE account_id = '{account_id}'
+        GROUP BY Month
+    ) AS avg_totals;
+    """

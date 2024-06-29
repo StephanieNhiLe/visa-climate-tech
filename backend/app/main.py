@@ -135,6 +135,82 @@ def verify_user():
             'success': False,
             'message': f'An error occurred: {ex}'
         }), 500
+    
+@app.route('/api/monthly_spend', methods=['POST'])
+def monthly_spend():
+    data = request.get_json()
+
+    if not data:
+        return jsonify({
+            'success': False,
+            'message': 'account_id is required'
+        }), 400
+
+    account_id = data.get('account_id', None)
+
+    if not account_id:
+        return jsonify({
+            'success': False,
+            'message': 'account_id is required'
+        }), 400
+
+    try:
+
+        monthly_spend_data = db_op.getMonthlySpendSummary(account_id)
+
+        if monthly_spend_data:
+            return jsonify({
+                'success': True,
+                'monthly_spend': [
+                    {
+                        'month': item.month,
+                        'total': item.total,
+                        'average': item.average,
+                        'minimum': item.minimum,
+                        'maximum': item.maximum
+                    } for item in monthly_spend_data
+                ]
+            }), 200
+
+    except Exception as ex:
+        return jsonify({
+            'success': False,
+            'message': f'An error occurred: {ex}'
+        }), 500
+    
+@app.route('/api/overall_avg_spend', methods=['POST'])
+def overall_avg_spend():
+    data = request.get_json()
+
+    if not data:
+        return jsonify({
+            'success': False,
+            'message': 'account_id is required'
+        }), 400
+
+    account_id = data.get('account_id', None)
+
+    if not account_id:
+        return jsonify({
+            'success': False,
+            'message': 'account_id is required'
+        }), 400
+
+    try:
+
+        overall_avg_spend_data = db_op.getOverallAvgSpend(account_id)
+
+        if overall_avg_spend_data:
+            return jsonify({
+                'success': True,
+                'overall_avg_spend': overall_avg_spend_data
+            }), 200
+
+    except Exception as ex:
+        return jsonify({
+            'success': False,
+            'message': f'An error occurred: {ex}'
+        }), 500
 
 
 if __name__ == '__main__':
