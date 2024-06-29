@@ -21,14 +21,14 @@ class database_connection:
             database = secrets["DB_NAME"]
             username = secrets["DB_USERNAME"]
             password = secrets["DB_PASSWORD"]
-            driver = secrets["DB_DRIVER"]
+            driver = secrets["DB_DRIVER"] 
 
             self.connection_url = (
                 f"DRIVER={driver};"
                 f"SERVER={domain},{port};"
                 f"DATABASE={database};"
                 f"UID={username};"
-                f"PWD={password};"
+                f"PWD={password};" 
                 "Encrypt=yes;"
                 "TrustServerCertificate=yes;"
             )
