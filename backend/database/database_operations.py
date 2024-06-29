@@ -1,4 +1,4 @@
-from .database_utils import checkAccountExistanceQuery, getAccountDetails, getAvgSpendPerMonth
+from .database_utils import checkAccountExistanceQuery, getAccountDetails, getAvgSpendPerMonth, getBusinessDetails, getMonthlySpendSummary, getOverallAvgSpend
 from .database_connection import database_connection
 from collections import namedtuple
 import pyodbc
@@ -9,7 +9,10 @@ UserAccount = namedtuple(
 AvgSpendPerMonth = namedtuple(
     'AvgSpendPerMonth', ['month', 're_category', 'avg_spend', 'rank'])
 
- 
+MonthlySpend = namedtuple(
+    'MonthlySpend', ['month', 'total', 'average', 'minimum', 'maximum']
+)
+
 class DB_Operation:
     def __init__(self):
         db_connection = database_connection()
@@ -66,6 +69,43 @@ class DB_Operation:
             print(f"Error querying the database: {ex}")
             raise
 
+    def getBusinessDetails(self, category: str) -> list:
+        query = getBusinessDetails(category)
+        try:
+            cursor = self._connection.cursor()
+            cursor.execute(query)
+
+            data = cursor.fetchall()
+            formatted_data = [business[0] for business in data]
+            return formatted_data
+        except pyodbc.Error as ex:
+            print(f"Error querying the database: {ex}")
+            raise
+    
+    def getMonthlySpendSummary(self, account_id: str) -> list:
+        query = getMonthlySpendSummary(account_id)
+        try:
+            cursor = self._connection.cursor()
+            cursor.execute(query)
+
+            data = cursor.fetchall()
+            formatted_data = [MonthlySpend(*item) for item in data]
+            return formatted_data
+        except pyodbc.Error as ex:
+            print(f"Error querying the database: {ex}")
+            raise
+
+    def getOverallAvgSpend(self, account_id: str) -> list:
+        query = getOverallAvgSpend(account_id)
+        try:
+            cursor = self._connection.cursor()
+            cursor.execute(query)
+
+            data = cursor.fetchone()[0] 
+            return data
+        except pyodbc.Error as ex:
+            print(f"Error querying the database: {ex}")
+            raise
 
 if __name__ == "__main__":
     # Sample ways this script would work mainly for testing

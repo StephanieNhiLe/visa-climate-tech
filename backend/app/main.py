@@ -15,6 +15,35 @@ CORS(app, origins='*', allow_headers=[
     "Access-Control-Allow-Credentials"],
     supports_credentials=True)
 
+#mock businesses return endpoint
+@app.route('/api/businesses', methods=['POST'])
+def get_businesses():  
+    data = request.get_json()
+    if not data:
+        return jsonify({
+            'success': False,
+            'message': 'Category is required'
+        }), 400
+    
+    category = data.get('category', None)
+    if not category:
+        return jsonify({
+            'success': False,
+            'message': 'Category is required'
+        }), 400
+    try: 
+        business_data = db_op.getBusinessDetails(category)
+        if business_data:
+            return jsonify({
+                'success': True,
+                'businesses': business_data
+            }), 200
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': f'An error occurred: {e}'
+        }), 500 
+
 
 @app.route('/api/messages', methods=['GET'])
 def get_data():
@@ -101,6 +130,82 @@ def verify_user():
                 'success': False,
                 'message': 'User account does not exist'
             }), 404
+
+    except Exception as ex:
+        return jsonify({
+            'success': False,
+            'message': f'An error occurred: {ex}'
+        }), 500
+    
+@app.route('/api/monthly_spend', methods=['POST'])
+def monthly_spend():
+    data = request.get_json()
+
+    if not data:
+        return jsonify({
+            'success': False,
+            'message': 'account_id is required'
+        }), 400
+
+    account_id = data.get('account_id', None)
+
+    if not account_id:
+        return jsonify({
+            'success': False,
+            'message': 'account_id is required'
+        }), 400
+
+    try:
+
+        monthly_spend_data = db_op.getMonthlySpendSummary(account_id)
+
+        if monthly_spend_data:
+            return jsonify({
+                'success': True,
+                'monthly_spend': [
+                    {
+                        'month': item.month,
+                        'total': item.total,
+                        'average': item.average,
+                        'minimum': item.minimum,
+                        'maximum': item.maximum
+                    } for item in monthly_spend_data
+                ]
+            }), 200
+
+    except Exception as ex:
+        return jsonify({
+            'success': False,
+            'message': f'An error occurred: {ex}'
+        }), 500
+    
+@app.route('/api/overall_avg_spend', methods=['POST'])
+def overall_avg_spend():
+    data = request.get_json()
+
+    if not data:
+        return jsonify({
+            'success': False,
+            'message': 'account_id is required'
+        }), 400
+
+    account_id = data.get('account_id', None)
+
+    if not account_id:
+        return jsonify({
+            'success': False,
+            'message': 'account_id is required'
+        }), 400
+
+    try:
+
+        overall_avg_spend_data = db_op.getOverallAvgSpend(account_id)
+
+        if overall_avg_spend_data:
+            return jsonify({
+                'success': True,
+                'overall_avg_spend': overall_avg_spend_data
+            }), 200
 
     except Exception as ex:
         return jsonify({
