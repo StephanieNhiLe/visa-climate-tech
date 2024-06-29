@@ -1,0 +1,66 @@
+{ 
+    "total_spending": 723.83,
+    "persona_id": 811024676,
+    "persona_type": "Frugal Family",
+    "month": "2023-05",
+    "name": "Jamie",
+    "username": "jamieboy",
+    "weekly_spending": [
+        {
+        "Food": 496,
+        "Entertainment": 76,
+        "Transportation": 581,
+        "wellness": 400,
+        "shopping": 519,
+        "date": "2023-05-01"
+        },
+       {
+        "Food": 282,
+        "Entertainment": 591,
+        "Transportation": 555,
+        "wellness": 778,
+        "shopping": 773,
+        "date": "2023-05-02"
+        },
+       {
+        "Food": 541,
+        "Entertainment": 498,
+        "Transportation": 871,
+        "wellness": 768,
+        "shopping": 541,
+        "date": "2023-05-03"
+    },
+       {
+        "Food": 473,
+        "Entertainment": 69,
+        "Transportation": 306,
+        "wellness": 92,
+        "shopping": 581,
+        "date": "2023-05-04"
+    },
+       {
+        "Food": 393,
+        "Entertainment": 600,
+        "Transportation": 640,
+        "wellness": 692,
+        "shopping": 228,
+        "date": "2023-05-05"
+    },
+       {
+        "Food": 372,
+        "Entertainment": 323,
+        "Transportation": 699,
+        "wellness": 600,
+        "shopping": 335,
+        "date": "2023-05-06"
+    },
+       {
+        "Food": 597,
+        "Entertainment": 588,
+        "Transportation": 110,
+        "wellness": 42,
+        "shopping": 973,
+        "date": "2023-05-07"
+    }
+    ]
+}   

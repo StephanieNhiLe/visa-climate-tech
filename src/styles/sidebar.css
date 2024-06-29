@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input:checked ~ div > span:nth-child(1) {
+    position: absolute;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+  
+input:checked ~ div > span:nth-child(3) {
+    position: absolute;
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+input:checked ~ div > span:nth-child(2) {
+    position: absolute;
+    transform: rotate(-45deg) translate(0, -1px);
+    background: #232323;
+}
+
+input:checked ~ ul {
+    transform: translateX(-10%);
+}
+
+@media only screen and (max-width: 850px) {
+    input ~ ul > li{
+        transform: translateX(-100%);
+        resize: min-content;
+    }
+    input:checked ~ ul {
+        transform: translateX(40%);
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    input ~ ul > li{
+        transform: translateX(-110%);
+    }
+    input:checked ~ ul {
+        transform: translateX(50);
+    }
+}
+  
+@media only screen and (max-width:500px) and (min-width: 300px) {
+    input ~ ul > li{
+        transform: translateX(-110%);
+    }
+    input:checked ~ ul {
+        transform: translateX(120%);
+    }
+}
