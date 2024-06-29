@@ -15,24 +15,25 @@ CORS(app, origins='*', allow_headers=[
     "Access-Control-Allow-Credentials"],
     supports_credentials=True)
 
-#mock businesses return endpoint
-@app.route('/api/businesses', methods=['POST'])
-def get_businesses():  
+def get_json_or_error(required_fields):
     data = request.get_json()
     if not data:
-        return jsonify({
-            'success': False,
-            'message': 'Category is required'
-        }), 400
+        return None, jsonify({'success': False, 'message': 'Data is required'}), 400
+
+    missing_fields = [field for field in required_fields if not data.get(field)]
+    if missing_fields:
+        return None, jsonify({'success': False, 'message': f"{', '.join(missing_fields)} are required"}), 400
     
-    category = data.get('category', None)
-    if not category:
-        return jsonify({
-            'success': False,
-            'message': 'Category is required'
-        }), 400
+    return data, None, None
+
+@app.route('/api/businesses', methods=['POST'])
+def get_businesses():  
+    data, error_response, status_code = get_json_or_error(['category'])
+    if error_response:
+        return error_response, status_code
+    
     try: 
-        business_data = db_op.getBusinessDetails(category)
+        business_data = db_op.getBusinessDetails(data['category'])
         if business_data:
             return jsonify({
                 'success': True,
@@ -51,29 +52,15 @@ def get_data():
         'message': "successful!"
     })
 
-
 @app.route('/api/account_details', methods=['POST'])
 def account_details():
-    data = request.get_json()
-
-    if not data:
-        return jsonify({
-            'success': False,
-            'message': 'credentials are required'
-        }), 400
-
-    username = data.get('username', None)
-    password = data.get('password', None)
-
-    if not username or not password:
-        return jsonify({
-            'access': False,
-            'Message': "username and password are required"
-        }), 400
-
+    data, error_response, status_code = get_json_or_error(['username', 'password'])
+    if error_response:
+        return error_response, status_code
+    
     try:
 
-        account_info = db_op.getUserAccount(username, password)
+        account_info = db_op.getUserAccount(data['username'], data['password'])
 
         if account_info:
             return jsonify({
@@ -98,26 +85,13 @@ def account_details():
 
 @app.route('/api/verify_user', methods=['POST'])
 def verify_user():
-    data = request.get_json()
-
-    if not data:
-        return jsonify({
-            'success': False,
-            'message': 'credentials are required'
-        }), 400
-
-    username = data.get('username', None)
-    password = data.get('password', None)
-
-    if not username or not password:
-        return jsonify({
-            'success': False,
-            'message': 'Username and password are required'
-        }), 400
+    data, error_response, status_code = get_json_or_error(['username', 'password'])
+    if error_response:
+        return error_response, status_code
 
     try:
 
-        has_account = db_op.checkUserHasAccount(username, password)
+        has_account = db_op.checkUserHasAccount(data['username'], data['password'])
 
         if has_account:
             return jsonify({
@@ -139,25 +113,13 @@ def verify_user():
     
 @app.route('/api/monthly_spend', methods=['POST'])
 def monthly_spend():
-    data = request.get_json()
-
-    if not data:
-        return jsonify({
-            'success': False,
-            'message': 'account_id is required'
-        }), 400
-
-    account_id = data.get('account_id', None)
-
-    if not account_id:
-        return jsonify({
-            'success': False,
-            'message': 'account_id is required'
-        }), 400
+    data, error_response, status_code = get_json_or_error(['account_id'])
+    if error_response:
+        return error_response, status_code
 
     try:
 
-        monthly_spend_data = db_op.getMonthlySpendSummary(account_id)
+        monthly_spend_data = db_op.getMonthlySpendSummary(data['account_id'])
 
         if monthly_spend_data:
             return jsonify({
@@ -181,25 +143,12 @@ def monthly_spend():
     
 @app.route('/api/overall_avg_spend', methods=['POST'])
 def overall_avg_spend():
-    data = request.get_json()
-
-    if not data:
-        return jsonify({
-            'success': False,
-            'message': 'account_id is required'
-        }), 400
-
-    account_id = data.get('account_id', None)
-
-    if not account_id:
-        return jsonify({
-            'success': False,
-            'message': 'account_id is required'
-        }), 400
+    data, error_response, status_code = get_json_or_error(['account_id'])
+    if error_response:
+        return error_response, status_code
 
     try:
-
-        overall_avg_spend_data = db_op.getOverallAvgSpend(account_id)
+        overall_avg_spend_data = db_op.getOverallAvgSpend(data['account_id'])
 
         if overall_avg_spend_data:
             return jsonify({
@@ -238,25 +187,12 @@ def get_access_token():
 
 @app.route('/api/avg_spend_per_month', methods=['POST'])
 def avg_spend_per_month():
-    data = request.get_json()
-
-    if not data:
-        return jsonify({
-            'success': False,
-            'message': 'credentials are required'
-        }), 400
-
-    account_id = data.get('account_id', None)
-
-    if not account_id:
-        return jsonify({
-            'success': False,
-            'message': 'Account ID is required'
-        }), 400
+    data, error_response, status_code = get_json_or_error(['account_id'])
+    if error_response:
+        return error_response, status_code
 
     try:
-
-        avg_spend_per_month = db_op.getAvgSpendPerMonth(account_id)
+        avg_spend_per_month = db_op.getAvgSpendPerMonth(data['account_id'])
         if avg_spend_per_month:
             return jsonify({
                 'success': True,
