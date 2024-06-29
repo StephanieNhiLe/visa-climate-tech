@@ -37,3 +37,31 @@ def getAccountDetails(username, password):
     INNER JOIN 
         UserInfo AS UI on UI.account_id = BD.account_id
     """
+
+def getAvgSpendPerMonth(account_id):
+    return f"""
+    WITH AvgSpendPerMonth AS (
+        SELECT
+            [month],
+            AVG([spend]) AS avg_spend,
+            [re_category] 
+        FROM
+            [VisaHack].[dbo].[cardData]
+        WHERE
+            [account_id] = '{account_id}'
+        GROUP BY 
+            [month], 
+            [re_category]
+    )
+    SELECT
+        [month],
+        [re_category],
+        avg_spend,
+        RANK() OVER (PARTITION BY [month] ORDER BY avg_spend DESC) AS rank
+    FROM
+        AvgSpendPerMonth
+    ORDER BY
+        [month], 
+        rank
+    """
+ 

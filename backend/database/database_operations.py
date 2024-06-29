@@ -1,4 +1,4 @@
-from .database_utils import checkAccountExistanceQuery, getAccountDetails
+from .database_utils import checkAccountExistanceQuery, getAccountDetails, getAvgSpendPerMonth
 from .database_connection import database_connection
 from collections import namedtuple
 import pyodbc
@@ -6,7 +6,10 @@ import pyodbc
 UserAccount = namedtuple(
     'UserAccount', ['account_id', 'first_name', 'last_name', 'persona'])
 
+AvgSpendPerMonth = namedtuple(
+    'AvgSpendPerMonth', ['month', 're_category', 'avg_spend', 'rank'])
 
+ 
 class DB_Operation:
     def __init__(self):
         db_connection = database_connection()
@@ -47,9 +50,26 @@ class DB_Operation:
             print(f"Error querying the database: {ex}")
             raise
 
+    def getAvgSpendPerMonth(self, account_id: int):
+        query = getAvgSpendPerMonth(account_id)
+        print(f"Executing query: {query}") 
+        print(f"Account ID: {account_id}") 
+        try:
+            cursor = self._connection.cursor()
+            cursor.execute(query)
+            data = cursor.fetchall()
+            print(f"Data fetched: {data}")
+            
+            formatted_data = [AvgSpendPerMonth(*row) for row in data]
+            return formatted_data 
+        except pyodbc.Error as ex:
+            print(f"Error querying the database: {ex}")
+            raise
+
 
 if __name__ == "__main__":
     # Sample ways this script would work mainly for testing
     db_op = DB_Operation()
     # print(db_op.checkUserHasAccount("bob", "pas121"))
-    print(db_op.getUserAccount("mike_j", "securepass"))
+    # print(db_op.getUserAccount("mike_j", "securepass"))
+    print(db_op.getAvgSpendPerMonth("94177e7a3daa4ef18746b355980ebd5f"))
