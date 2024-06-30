@@ -1,9 +1,11 @@
 import './App.css';
 import React, { useEffect, useState } from 'react'; 
+import MonthlySpendChart from './components/dataVisualization/MonthlySpendChart';
 
 function App() {
   const [message, setMessage] = useState('Loading...');
   const [accessToken, setAccessToken] = useState('');
+  const [monthlySpend, setMonthlySpend] = useState([]);
 
   useEffect(() => {
     fetchAccessToken();
@@ -40,12 +42,15 @@ function App() {
     .then(data => setMessage(data.message))
     .catch(error => console.error('Error fetching message:', error));
   };
+ 
 
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <p>The message is {message}</p>
-      </header>
+      </header> */}
+      <h1>Monthly Spend Summary</h1>
+      <MonthlySpendChart /> 
     </div>
   );
 }

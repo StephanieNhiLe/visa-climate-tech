@@ -45,7 +45,6 @@ def get_businesses():
             'message': f'An error occurred: {e}'
         }), 500 
 
-
 @app.route('/api/messages', methods=['GET'])
 def get_data():
     return jsonify({
@@ -81,7 +80,6 @@ def account_details():
             "access": False,
             "message": f"An error occured with exeption {ex}"
         }), 500
-
 
 @app.route('/api/verify_user', methods=['POST'])
 def verify_user():
