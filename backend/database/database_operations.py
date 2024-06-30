@@ -1,4 +1,4 @@
-from .database_utils import checkAccountExistanceQuery, getAccountDetails, getAvgSpendPerMonth, getBusinessDetails, getMonthlySpendSummary, getOverallAvgSpend
+from .database_utils import checkAccountExistanceQuery, getAccountDetails, getAvgSpendPerMonth, getBusinessDetails, getMonthlySpendSum, getOverallAvgSpend
 from .database_connection import database_connection
 from collections import namedtuple
 import pyodbc
@@ -83,7 +83,7 @@ class DB_Operation:
             raise
     
     def getMonthlySpendSummary(self, account_id: str) -> list:
-        query = getMonthlySpendSummary(account_id)
+        query = getMonthlySpendSum(account_id)
         try:
             cursor = self._connection.cursor()
             cursor.execute(query)

@@ -35,7 +35,7 @@ function App() {
     .catch(error => console.error('Error fetching access token:', error));
   };
 
-  // Test API Message
+  // Test API Message - Sample 
   const fetchMessage = (token) => {
     fetch('http://127.0.0.1:5000/api/messages', {
       method: 'GET',
@@ -86,7 +86,7 @@ function App() {
         <div className="flex flex-row justify-around ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6">
 
           {/* Financial Trend Section */}
-          <div className="flex flex-col space-between ml-150% w-50 md:w-1/3 h-64 p-4 bg-white rounded-lg shadow-md">
+          <div className="flex flex-col space-between ml-150% w-50 md:w-1/3 p-4 bg-white rounded-lg shadow-md">
             <h1 className="text-xl font-semibold mb-4">Spending Planner</h1>
             <h2 className='text-slate-400 font-semibold'>Spending Summary</h2>
             <MonthlySpendChart /> 
