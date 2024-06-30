@@ -31,6 +31,7 @@ class database_connection:
                 f"PWD={password};" 
                 "Encrypt=yes;"
                 "TrustServerCertificate=yes;"
+                "MARS_Connection=Yes;"
             )
 
             self.connection = self.create_connection()

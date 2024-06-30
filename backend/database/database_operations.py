@@ -86,9 +86,9 @@ class DB_Operation:
         query = getMonthlySpendSum(account_id)
         try:
             cursor = self._connection.cursor()
-            cursor.execute(query)
+            # cursor.execute(query)
 
-            data = cursor.fetchall()
+            data = cursor.execute(query).fetchall()
             formatted_data = [MonthlySpend(*item) for item in data]
             return formatted_data
         except pyodbc.Error as ex:
