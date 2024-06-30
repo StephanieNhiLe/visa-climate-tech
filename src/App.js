@@ -58,34 +58,31 @@ function App() {
             <Route path="/" element={<Navigate to="/dashboard" />} />
             <Route path='/dashboard' element={
               <div className={!navVisible ? "page" : "page with-sidebar"}>
-                <h1>Dashboard</h1>
+                <h1 className={'flex font-bold text-3xl text-teal-950 ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6'}>Dashboard</h1>
               </div>
             } />
             <Route path='/activity' element={
               <div className={!navVisible ? "page" : "page with-sidebar"}>
-                <h1>Activity</h1>
+                <h1 className={'flex font-bold text-3xl text-teal-950 ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6'}>Activity</h1>
               </div>
             }/>
             <Route path='/analytics' element={
               <div className={!navVisible ? "page" : "page with-sidebar"}>
-                <h1>Analytics</h1>
+                <h1 className={'flex font-bold text-3xl text-teal-950 ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6'}>Analytics</h1>
               </div>
             }/>
             <Route path='/transactions' element={
               <div className={!navVisible ? "page" : "page with-sidebar"}>
-                <h1>Transactions</h1>
+                <h1 className={'flex font-bold text-3xl text-teal-950 ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6'}>Transactions</h1>
               </div>
             }/>
                 <Route path='/logout' element={
               <div className={!navVisible ? "page" : "page with-sidebar"}>
-                <h1>Logout</h1>
+                <h1 className={'flex font-bold text-3xl text-teal-950 ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6'}>Logout</h1>
               </div>
             }/>
           </Routes>
-        </div>
-        <div>
-          <h1 className='flex font-bold text-3xl text-teal-950 ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6'>Dashboard</h1>
-        </div>
+        </div> 
         <div className="flex flex-row justify-around ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6">
 
           {/* Financial Trend Section */}
