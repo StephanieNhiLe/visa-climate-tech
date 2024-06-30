@@ -80,11 +80,11 @@ function Sidebar() {
         </div>
 
         {/* Sidebar Menu */}
-        <ul className={`fixed top-0 left-0 px-10 py-10 flex flex-col w-64 h-full bg-teal-900 list-none transform transition-transform duration-500 ease-in-out ${show ? 'translate-x-0' : '-translate-x-full'} z-20`}>
+        <ul className={`fixed top-0 left-0 px-14 py-10 flex flex-col w-64 h-full bg-teal-900 list-none transform transition-transform duration-500 ease-in-out ${show ? 'translate-x-0' : '-translate-x-full'} z-20`}>
           <li className="absolute mt-10 py-2 flex flex-col space-y-8 antialiased">
             {Links.map((item, index) => (
               <NavLink to={item.href} key={index} className="text-white">
-                <div key={index} className="relative flex flex-grow-0 space-x-3 antialiased rounded transition-transform duration-300 ease-in-out hover:text-gray-700 hover:bg-gray-200">
+                <div key={index} className="relative flex flex-grow-0 space-x-3 p-3 antialiased rounded-md transition-transform duration-300 ease-in-out hover:text-gray-700 hover:bg-gray-200">
                   <item.icon size={25} />
                   <span>{item?.title}</span>
                 </div>
