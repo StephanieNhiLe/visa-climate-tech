@@ -5,6 +5,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 from dotenv import dotenv_values 
 import sys
+import pandas as pd
 sys.path.append("..")
 
 db_op = DB_Operation()
@@ -216,5 +217,63 @@ def avg_spend_per_month():
             'message': f'An error occurred: {ex}'
         }), 500
 
+def process_monthly_spend_by_category_data(monthly_spend_category):
+    df = pd.DataFrame(monthly_spend_category, columns=['month', 're_category', 'total'])
+    df['total'] = pd.to_numeric(df['total'], errors='coerce')
+    df = df.dropna(subset=['total'])
+
+    df_pivot = df.pivot(index='month', columns='re_category', values='total').fillna(0)
+    total_spend_by_month = df_pivot.sum(axis=1)
+
+    total_spend_by_category = df_pivot.reset_index().to_dict(orient='records')
+    
+    if total_spend_by_month.eq(0).any():
+        return None, None, 'Cannot calculate percentages when total spend is zero for any month'
+    
+    monthly_spend_by_category_percent = df_pivot.divide(total_spend_by_month, axis=0) * 100
+    highest_spent_category = df_pivot.idxmax(axis=1)
+    highest_spent_categories = [
+        {'month': month, 're_category': category, 'amount': df_pivot.loc[month, category]}
+        for month, category in highest_spent_category.items()
+    ]
+
+    return total_spend_by_category, monthly_spend_by_category_percent, highest_spent_categories, None
+
+@app.route('/api/monthly_spend_by_category', methods=['POST'])
+def monthly_spend_by_category():
+    data, error_response, status_code = get_json_or_error(['account_id'])
+    if error_response:
+        return error_response, status_code
+
+    try:
+        monthly_spend_category = db_op.getMonthlySpendByCategory(data['account_id']) 
+        
+        if monthly_spend_category:
+            total_spend_by_category, monthly_spend_by_category_percent, highest_spent_categories, error_message = process_monthly_spend_by_category_data(monthly_spend_category)
+            if error_message:
+                return jsonify({
+                    'success': False,
+                    'message': error_message
+                }), 400
+
+            return jsonify({
+                'success': True,
+                'monthly_spend_by_category_percent': monthly_spend_by_category_percent.reset_index().to_dict(orient='records'),
+                'highest_spent_category': highest_spent_categories,
+                'total_spend_by_category': total_spend_by_category,
+            }), 200
+        else:
+            return jsonify({
+                'success': False,
+                'message': 'No data found for the account'
+            }), 404
+
+    except Exception as ex:
+        return jsonify({
+            'success': False,
+            'message': f'An error occurred: {ex}'
+        }), 500
+
+    
 if __name__ == '__main__':
     app.run(debug=True)

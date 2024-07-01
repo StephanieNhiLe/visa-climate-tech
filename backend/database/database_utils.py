@@ -99,3 +99,14 @@ def getOverallAvgSpend(account_id):
         GROUP BY Month
     ) AS avg_totals;
     """
+
+def getMonthlySpendByCategory(account_id):
+    return f"""
+    SELECT 
+        month,
+        re_category,
+        SUM(spend) as total
+    FROM [VisaHack].[dbo].[cardData]
+    WHERE account_id = '{account_id}'
+    GROUP BY Month, re_category;
+    """

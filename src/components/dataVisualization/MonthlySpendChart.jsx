@@ -15,7 +15,7 @@ const monthNames = {
   7: 'July'
 };
 
-const MonthlySpendChart = () => {
+const MonthlySpendChart = ({accountId}) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [hoveredMonth, setHoveredMonth] = useState(6);
@@ -32,7 +32,7 @@ const MonthlySpendChart = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ account_id: '5a73582adf954cf6b3db6cc97bedccd9' }) // Make sure to use the correct account_id
+      body: JSON.stringify({ account_id: accountId })  
     })
     .then(response => {
       if (!response.ok) {
@@ -55,7 +55,7 @@ const MonthlySpendChart = () => {
   };
 
   const fetchOverallAvgSpend = () => {
-    axios.post('http://127.0.0.1:5000/api/overall_avg_spend', { account_id: '5a73582adf954cf6b3db6cc97bedccd9' })
+    axios.post('http://127.0.0.1:5000/api/overall_avg_spend', { account_id: accountId })
       .then(response => {
         if (response.data.success) {
           setAverageSpend(parseFloat(response.data.overall_avg_spend));
@@ -79,9 +79,11 @@ const MonthlySpendChart = () => {
 
   return (
     <div>
+      <h2 className='text-teal-900 font-semibold text-xl'>Spending Summary</h2>
+
       <h2>{monthNames[hoveredMonth]} Summary</h2>
       <p className='text-2xl'>${(parseFloat(currentMonthData.total)).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-      <ResponsiveContainer width="100%" height={400}>
+      <ResponsiveContainer width="100%" height={300}>
         <BarChart 
           data={data} 
           margin={{ top: 20, right: 20, bottom: 5 }}
@@ -98,14 +100,12 @@ const MonthlySpendChart = () => {
             formatter={(value) => `$${parseFloat(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`} 
             labelFormatter={(month) => monthNames[month]}
           />
-          {/* <Legend /> */}
           <Bar dataKey="total" fill="#008080" name="Total Spend" />
           {averageSpend && (
             <ReferenceLine 
               y={averageSpend} 
               stroke="grey" 
               strokeDasharray="5 5" 
-              // label={{ value: `Average Spend: ${formatYAxis(averageSpend)}`, position: 'insideTop', fill: 'red' }} 
             />
           )}
         </BarChart>

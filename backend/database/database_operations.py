@@ -1,4 +1,4 @@
-from .database_utils import checkAccountExistanceQuery, getAccountDetails, getAvgSpendPerMonth, getBusinessDetails, getMonthlySpendSum, getOverallAvgSpend
+from .database_utils import checkAccountExistanceQuery, getAccountDetails, getAvgSpendPerMonth, getBusinessDetails, getMonthlySpendSum, getOverallAvgSpend, getMonthlySpendByCategory
 from .database_connection import database_connection
 from collections import namedtuple
 import pyodbc
@@ -11,6 +11,9 @@ AvgSpendPerMonth = namedtuple(
 
 MonthlySpend = namedtuple(
     'MonthlySpend', ['month', 'total', 'average', 'minimum', 'maximum'])
+
+MonthlySpendByCategory = namedtuple(
+    'MonthlySpendByCategory', ['month', 're_category', 'total'])
     
 
 class DB_Operation:
@@ -103,6 +106,19 @@ class DB_Operation:
 
             data = cursor.fetchone()[0] 
             return data
+        except pyodbc.Error as ex:
+            print(f"Error querying the database: {ex}")
+            raise
+
+    def getMonthlySpendByCategory(self, account_id: str) -> list:
+        query = getMonthlySpendByCategory(account_id)
+        try:
+            cursor = self._connection.cursor()
+            cursor.execute(query)
+
+            data = cursor.fetchall()
+            formatted_data = [MonthlySpendByCategory(*row) for row in data]
+            return formatted_data 
         except pyodbc.Error as ex:
             print(f"Error querying the database: {ex}")
             raise
