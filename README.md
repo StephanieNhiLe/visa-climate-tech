@@ -1,5 +1,6 @@
 # EcoFiDash 
 An eco-friendly dashboard providing personalized insights and sustainable spending recommendation
+
 ![EcoFiDash](src/EcoFiDash.png)
 
 ## Inspiration
@@ -17,7 +18,7 @@ Our innovative platform transforms how consumers interact with their spending da
 - **Analysis and Recommendations**: Advanced AI text-prompt algorithms analyze spending habits and environmental impact, providing tailored suggestions for sustainable alternatives.
 - **Visualization and Engagement**: A user-friendly dashboard displays carbon footprint metrics and offers interactive features like an AI chatbot for continuous engagement and education.
 ## How to use it
-Setting Up: [SETUP.md](https://github.com/StephanieNhiLe/Visa-Climate-Tech-Hackathon/blob/f6c1289de5426d6d4959769aa15e06f5983abbbd/SETUP.md)
+Setting Up: [SETUP.md]([https://github.com/StephanieNhiLe/Visa-Climate-Tech-Hackathon/blob/f6c1289de5426d6d4959769aa15e06f5983abbbd/SETUP.md](https://github.com/StephanieNhiLe/Visa-Climate-Tech-Hackathon/blob/66fed7a845ff6e16eba37d97d6db987f67bff04a/SETUP.md))
 ## How we built it
 EcoFiDash was developed with a focus on leveraging data to drive sustainable spending habits. 
 - The platform uses Flask as backend and React JS for front-end and its robust ecosystem and efficient rendering, while Tailwind CSS provides a modern, customizable design. 
