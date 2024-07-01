@@ -1,5 +1,5 @@
 from database.database_operations import DB_Operation
-from .app_utils import get_response_object, STATUS_CODE_INTERNAL_SERVER_ERROR, STATUS_CODE_OK, STATUS_CODE_NOT_FOUND
+from .app_utils import get_response_object, get_mock_ecolytiqs_response_object, STATUS_CODE_INTERNAL_SERVER_ERROR, STATUS_CODE_OK, STATUS_CODE_NOT_FOUND
 
 from flask_cors import CORS
 from flask import Flask, request, jsonify
@@ -224,6 +224,30 @@ def avg_spend_per_month():
             'success': False,
             'message': f'An error occurred: {ex}'
         }), STATUS_CODE_INTERNAL_SERVER_ERROR
+
+
+@app.route('/api/get_footprints', methods=['GET'])
+def get_footprints():
+    # secrets = dotenv_values("../../.env")
+    # access_token = secrets['ACCESS_TOKEN']
+
+    # account_id = request.args.get('account_id')
+    # data = request.args.get('data')
+
+    data, error_response, status_code = get_response_object(
+        ['account_id', 'data'])
+
+    if error_response:
+        return error_response, status_code
+
+    mock_data, mock_error_response, status_code = get_mock_ecolytiqs_response_object(
+        account_id=data["account_id"],
+        transaction_parameters=data["data"])
+
+    if status_code == STATUS_CODE_OK:
+        return mock_data, STATUS_CODE_OK
+    else:
+        return mock_error_response, STATUS_CODE_NOT_FOUND
 
 
 if __name__ == '__main__':
