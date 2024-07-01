@@ -10,8 +10,8 @@ AvgSpendPerMonth = namedtuple(
     'AvgSpendPerMonth', ['month', 're_category', 'avg_spend', 'rank'])
 
 MonthlySpend = namedtuple(
-    'MonthlySpend', ['month', 'total', 'average', 'minimum', 'maximum']
-)
+    'MonthlySpend', ['month', 'total', 'average', 'minimum', 'maximum'])
+    
 
 class DB_Operation:
     def __init__(self):
