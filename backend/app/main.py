@@ -30,6 +30,21 @@ CORS(app, origins='*', allow_headers=[
     supports_credentials=True)
 
 
+MONTHLY_SPEND_BY_CATEGORY_URL = 'http://127.0.0.1:5000/api/monthly_spend_by_category'
+
+# MOCK - Emission factors sample
+CARBON_FOOTPRINT_FACTORS = {
+    "Food & Dining": 0.05,                # Approx. 50 g CO2/EUR
+    "Health & Personal Care": 0.04,       # Approx. 40 g CO2/EUR
+    "Merchandise & Retail": 0.015,        # Approx. 15 g CO2/EUR
+    "Other Services": 0.1,                # Approx. 100 g CO2/EUR (General placeholder)
+    "Services": 0.09,                     # Approx. 90 g CO2/EUR
+    "Shopping": 0.175,                    # Approx. 175 g CO2/EUR
+    "Transportation": 0.45,               # Approx. 450 g CO2/EUR
+    "Travel/Entertainment": 0.06,         # Approx. 60 g CO2/EUR
+    "Unknown": 0.0                        # General placeholder (Hypothetical factor)
+}
+
 @app.route('/api/businesses', methods=['POST'])
 def get_businesses():
     data, error_response, status_code = get_response_object(['category'])
@@ -284,7 +299,7 @@ def process_monthly_spend_by_category_data(monthly_spend_category):
 
 @app.route('/api/monthly_spend_by_category', methods=['POST'])
 def monthly_spend_by_category():
-    data, error_response, status_code = get_json_or_error(['account_id'])
+    data, error_response, status_code = get_response_object(['account_id'])
     if error_response:
         return error_response, status_code
 
@@ -381,6 +396,6 @@ def learn_more():
         'success': True,
         'message': message}
     ), 200
-    
+  
 if __name__ == '__main__':
     app.run(debug=True)

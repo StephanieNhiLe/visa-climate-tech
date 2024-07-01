@@ -15,8 +15,6 @@ MonthlySpend = namedtuple(
 MonthlySpendByCategory = namedtuple(
     'MonthlySpendByCategory', ['month', 're_category', 'total'])
     
-
-
 class DB_Operation:
     def __init__(self):
         db_connection = database_connection()
@@ -124,7 +122,23 @@ class DB_Operation:
             print(f"Error querying the database: {ex}")
             raise
 
-
+    def calculate_carbon_footprints(transactions): 
+        carbon_footprints = []
+        
+        for transaction in transactions:
+            category = transaction.get('category')
+            amount = transaction.get('amount', 0)
+            emission_factor = EMISSION_FACTORS.get(category, 0)
+            carbon_footprint = amount * emission_factor
+            
+            carbon_footprints.append({
+                'category': category,
+                'amount': amount,
+                'carbon_footprint': carbon_footprint
+            })
+        
+        return carbon_footprints
+ 
 if __name__ == "__main__":
     # Sample ways this script would work mainly for testing
     db_op = DB_Operation()
