@@ -1,4 +1,4 @@
-from .database_utils import checkAccountExistanceQuery, getAccountDetails
+from .database_utils import checkAccountExistanceQuery, getAccountDetails, getAvgSpendPerMonth, getBusinessDetails, getMonthlySpendSum, getOverallAvgSpend
 from .database_connection import database_connection
 from collections import namedtuple
 import pyodbc
@@ -6,6 +6,12 @@ import pyodbc
 UserAccount = namedtuple(
     'UserAccount', ['account_id', 'first_name', 'last_name', 'persona'])
 
+AvgSpendPerMonth = namedtuple(
+    'AvgSpendPerMonth', ['month', 're_category', 'avg_spend', 'rank'])
+
+MonthlySpend = namedtuple(
+    'MonthlySpend', ['month', 'total', 'average', 'minimum', 'maximum']
+)
 
 class DB_Operation:
     def __init__(self):
@@ -47,9 +53,63 @@ class DB_Operation:
             print(f"Error querying the database: {ex}")
             raise
 
+    def getAvgSpendPerMonth(self, account_id: int):
+        query = getAvgSpendPerMonth(account_id)
+        print(f"Executing query: {query}") 
+        print(f"Account ID: {account_id}") 
+        try:
+            cursor = self._connection.cursor()
+            cursor.execute(query)
+            data = cursor.fetchall()
+            print(f"Data fetched: {data}")
+            
+            formatted_data = [AvgSpendPerMonth(*row) for row in data]
+            return formatted_data 
+        except pyodbc.Error as ex:
+            print(f"Error querying the database: {ex}")
+            raise
+
+    def getBusinessDetails(self, category: str) -> list:
+        query = getBusinessDetails(category)
+        try:
+            cursor = self._connection.cursor()
+            cursor.execute(query)
+
+            data = cursor.fetchall()
+            formatted_data = [business[0] for business in data]
+            return formatted_data
+        except pyodbc.Error as ex:
+            print(f"Error querying the database: {ex}")
+            raise
+    
+    def getMonthlySpendSummary(self, account_id: str) -> list:
+        query = getMonthlySpendSum(account_id)
+        try:
+            cursor = self._connection.cursor()
+            # cursor.execute(query)
+
+            data = cursor.execute(query).fetchall()
+            formatted_data = [MonthlySpend(*item) for item in data]
+            return formatted_data
+        except pyodbc.Error as ex:
+            print(f"Error querying the database: {ex}")
+            raise
+
+    def getOverallAvgSpend(self, account_id: str) -> list:
+        query = getOverallAvgSpend(account_id)
+        try:
+            cursor = self._connection.cursor()
+            cursor.execute(query)
+
+            data = cursor.fetchone()[0] 
+            return data
+        except pyodbc.Error as ex:
+            print(f"Error querying the database: {ex}")
+            raise
 
 if __name__ == "__main__":
     # Sample ways this script would work mainly for testing
     db_op = DB_Operation()
     # print(db_op.checkUserHasAccount("bob", "pas121"))
-    print(db_op.getUserAccount("mike_j", "securepass"))
+    # print(db_op.getUserAccount("mike_j", "securepass"))
+    print(db_op.getAvgSpendPerMonth("94177e7a3daa4ef18746b355980ebd5f"))
