@@ -3,368 +3,304 @@
         "account_id": "5a73582adf954cf6b3db6cc97bedccd9",
         "transactions": [
             {
-                "transaction_id": "1a2b3c4d-5e6f-7g8h-9i0j-k1l2m3n4o5p6",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_1",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Services"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -43.4947,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 18953,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-01T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "2b3c4d5e-6f7g8h-9i0j1k-2l3m4n5o6p7",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_2",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Food & Dining"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -33.6155,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 14622,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-02T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "3c4d5e6f-7g8h9i-0j1k2l-3m4n5o6p7q8",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_3",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Transportation"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -25.2636,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 10914,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-03T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "4d5e6f7g-8h9i0j-1k2l3m-4n5o6p7q8r9",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_4",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Shopping"
+                    "value": "Shopping",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -21.53,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 9377,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-04T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "5e6f7g8h-9i0j1k-2l3m4n-5o6p7q8r9s0",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_5",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Merchandise & Retail"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -18.94,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 8264,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-05T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "6f7g8h9i-0j1k2l-3m4n5o-6p7q8r9s0t1",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_6",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Health & Personal Care"
+                    "value": "Health & Personal Care",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -13.3266,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 5810,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-06T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "7g8h9i0j-1k2l3m-4n5o6p-7q8r9s0t1u2",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_7",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Other Services"
+                    "value": "Other Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -6.43,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2815,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-07T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "8h9i0j1k-2l3m4n-5o6p7q-8r9s0t1u2v3",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_8",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Travel/Entertainment"
+                    "value": "Travel/Entertainment",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -4.034,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 1763,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-08T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "9i0j1k2l-3m4n5o-6p7q8r-9s0t1u2v3w4",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_9",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Unknown"
+                    "value": "Unknown",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -101.87,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 39761,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-01T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "0j1k2l3m-4n5o6p-7q8r9s-0t1u2v3w4x5",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_10",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Shopping"
+                    "value": "Shopping",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -91.8425,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 35860,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-02T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "1k2l3m4n-5o6p7q-8r9s0t-1u2v3w4x5y6",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_11",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Services"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -61.4,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 24071,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-03T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "2l3m4n5o-6p7q8r-9s0t1u-2v3w4x5y6z7",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_12",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Health & Personal Care"
+                    "value": "Health & Personal Care",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -32.58,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 12778,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-04T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "3m4n5o6p-7q8r9s-0t1u2v-3w4x5y6z7a8",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_13",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Other Services"
+                    "value": "Other Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -27.425,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 10726,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-05T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "4n5o6p7q-8r9s0t-1u2v3w-4x5y6z7a8b9",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_14",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Transportation"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -22.6628,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 10630,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-06T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "5o6p7q8r-9s0t1u-2v3w4x-5y6z7a8b9c0",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_15",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Food & Dining"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -22.0307,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 8785,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-07T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "6p7q8r9s-0t1u2v-3w4x5y-6z7a8b9c0d1",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_16",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Merchandise & Retail"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -6.075,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 3025,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-08T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "7q8r9s0t-1u2v3w-4x5y6z-7a8b9c0d1e2",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_17",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Travel/Entertainment"
+                    "value": "Unknown",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -5.895,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 24629,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-09T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "8r9s0t1u-2v3w4x-5y6z7a-8b9c0d1e2f3",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_18",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Unknown"
+                    "value": "Shopping",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -49.3,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 21364,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-01T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "9s0t1u2v-3w4x5y-6z7a8b-9c0d1e2f3g4",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_19",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Shopping"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -42.8985,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 12448,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-02T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "0t1u2v3w-4x5y6z-7a8b9c-0d1e2f3g4h5",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_20",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Merchandise & Retail"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -24.9541,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 11319,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-03T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "1u2v3w4x-5y6z7a-8b9c0d-1e2f3g4h5i6",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_21",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Food & Dining"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -22.6883,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 10210,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-04T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "2v3w4x5y-6z7a8b-9c0d1e-2f3g4h5i6j7",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_22",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Services"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -20.55,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 7393,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-05T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "3w4x5y6z-7a8b9c-0d1e2f-3g4h5i6j7k8",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_23",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Transportation"
+                    "value": "Other Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -18.5425,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 5518,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-06T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "4x5y6z7a-8b9c0d-1e2f3g-4h5i6j7k8l9",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_24",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Other Services"
+                    "value": "Health & Personal Care",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -13.8536,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 3964,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-07T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "5y6z7a8b-9c0d1e-2f3g4h-5i6j7k8l9m0",
-                "account_id": "account123",
+                "transaction_id": "generated_transaction_id_25",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Health & Personal Care"
+                    "value": "Travel/Entertainment",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -11.84,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 3521,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-08T00:00:00Z"
-            },
-            {
-                "transaction_id": "6z7a8b9c-0d1e2f-3g4h5i-6j7k8l9m0n1",
-                "account_id": "account123",
-                "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Travel/Entertainment"
-                },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -8.39,
-                    "currency_code": "EUR"
-                },
-                "datetime": "2023-07-09T00:00:00Z"
+                "month": 7
             }
         ],
         "success": true
@@ -373,326 +309,292 @@
         "account_id": "5a73582adf954cf6b3db6cc97tedggd9",
         "transactions": [
             {
-                "transaction_id": "a1b2c3d4-5e6f-7g8h-9i0j-k1l2m3n4o5p6",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_1",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Shopping"
+                    "value": "Shopping",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -209.51,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 156159,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-01T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "b2c3d4e5-6f7g-8h9i-0j1k-2l3m4n5o6p7",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_2",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Health & Personal Care"
+                    "value": "Health & Personal Care",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -53.15,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 69505,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-02T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "c3d4e5f6-7g8h-9i0j-1k2l-3m4n5o6p7q8",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_3",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Unknown"
+                    "value": "Unknown",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -44.02,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 19380,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-03T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "d4e5f6g7-8h9i-0j1k-2l3m-4n5o6p7q8r9",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_4",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Transportation"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -38.56,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 143465,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-04T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "e5f6g7h8-9i0j-1k2l-3m4n-5o6p7q8r9s0",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_5",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Food & Dining"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -26.464,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 56269,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-05T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "f6g7h8i9-0j1k-2l3m-4n5o-6p7q8r9s0t1",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_6",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Merchandise & Retail"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -16.1925,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 32420,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-06T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "g7h8i9j0-1k2l-3m4n-5o6p-7q8r9s0t1u2",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_7",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Services"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -10.63,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 27430,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-07T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "h8i9j0k1-2l3m-4n5o-6p7q-8r9s0t1u2v3",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_8",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Travel/Entertainment"
+                    "value": "Travel/Entertainment",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -9.3025,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 23982,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-08T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "i9j0k1l2-3m4n-5o6p-7q8r-9s0t1u2v3w4",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_9",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Shopping"
+                    "value": "Other Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -73.035,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 9630,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-01T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "j0k1l2m3-4n5o-6p7q-8r9s-0t1u2v3w4x5",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_10",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Health & Personal Care"
+                    "value": "Shopping",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -55.418,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 228805,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-02T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "k1l2m3n4-5o6p-7q8r-9s0t-1u2v3w4x5y6",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_11",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Food & Dining"
+                    "value": "Health & Personal Care",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -22.43,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 101192,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-03T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "l2m3n4o5-6p7q-8r9s-0t1u-2v3w4x5y6z7",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_12",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Merchandise & Retail"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -15.9252,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 44941,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-04T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "m3n4o5p6-7q8r-9s0t-1u2v-3w4x5y6z7a8",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_13",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Services"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -14.325,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 25934,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-05T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "n4o5p6q7-8r9s-0t1u-2v3w-4x5y6z7a8b9",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_14",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Transportation"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -12.997,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 22519,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-06T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "o5p6q7r8-9s0t-1u2v-3w4x-5y6z7a8b9c0",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_15",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Travel/Entertainment"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -8.3866,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 20072,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-07T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "p6q7r8s9-0t1u-2v3w-4x5y-6z7a8b9c0d1",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_16",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Shopping"
+                    "value": "Travel/Entertainment",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -90.735,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 16715,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-01T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "q7r8s9t0-1u2v-3w4x-5y6z-7a8b9c0d1e2",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_17",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Health & Personal Care"
+                    "value": "Shopping",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -38.0671,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 224681,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-02T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "r8s9t0u1-2v3w-4x5y-6z7a-8b9c0d1e2f3",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_18",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Food & Dining"
+                    "value": "Health & Personal Care",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -23.4846,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 118323,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-03T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "s9t0u1v2-3w4x-5y6z-7a8b-9c0d1e2f3g4",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_19",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Travel/Entertainment"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -17.644,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 61552,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-04T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "t0u1v2w3-4x5y-6z7a-8b9c-0d1e2f3g4h5",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_20",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Merchandise & Retail"
+                    "value": "Travel/Entertainment",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -17.5428,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 40015,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-05T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "u1v2w3x4-5y6z-7a8b-9c0d-1e2f3g4h5i6",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_21",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Services"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -12.662,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 35254,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-06T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "v2w3x4y5-6z7a-8b9c-0d1e-2f3g4h5i6j7",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_22",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Transportation"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -9.8569,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 24185,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-07T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "w3x4y5z6-7a8b-9c0d-1e2f-3g4h5i6j7k8",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_23",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Other Services"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -9.63,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 23264,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-08T00:00:00Z"
+                "month": 7
+            },
+            {
+                "transaction_id": "generated_transaction_id_24",
+                "category": {
+                    "value": "Other Services",
+                    "system": "ECOLYTIQ_V2"
+                },
+                "co2_footprint": {
+                    "value": 9630,
+                    "unit": "g"
+                },
+                "month": 7
             }
         ],
         "success": true
@@ -701,270 +603,232 @@
         "account_id": "5a73582adf954cf6b3db6cc97yedood7",
         "transactions": [
             {
-                "transaction_id": "u1v2w3x4-5y6z-7a8b-9c0d-1e2f3g4h5i6j",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_1",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Merchandise & Retail"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -99.18,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 9786,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-01T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "v3w4x5y6-7z8a-9b0c-1d2e-3f4g5h6i7j8k",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_2",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Unknown"
+                    "value": "Unknown",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -35.59,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 3486,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-02T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "w5x6y7z8-9a0b-1c2d-3e4f-5g6h7i8j9k0l",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_3",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Food & Dining"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -28.8508,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2831,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-03T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "x6y7z8a9-0b1c-2d3e-4f5g-6h7i8j9k0l1m",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_4",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Transportation"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -25.974,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2582,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-04T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "y7z8a9b0-1c2d-3e4f-5g6h-7i8j9k0l1m2n",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_5",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Services"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -11.15,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 1109,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-05T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "z8a9b0c1-2d3e-4f5g-6h7i-8j9k0l1m2n3o",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_6",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Health & Personal Care"
+                    "value": "Health & Personal Care",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -6.445,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 642,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-06T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "a9b0c1d2-3e4f-5g6h-7i8j-9k0l1m2n3o4p",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_7",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Other Services"
+                    "value": "Other Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -3.76,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 373,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-07T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "b0c1d2e3-4f5g-6h7i-8j9k-0l1m2n3o4p5q",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_8",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Shopping"
+                    "value": "Shopping",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -163.38,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 20107,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-01T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "c1d2e3f4-5g6h-7i8j-9k0l-1m2n3o4p5q6r",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_9",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Merchandise & Retail"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -50.6514,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 6280,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-02T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "d2e3f4g5-6h7i-8j9k-0l1m-2n3o4p5q6r7s",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_10",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Food & Dining"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -39.3796,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 4875,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-03T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "e3f4g5h6-7i8j-9k0l-1m2n-3o4p5q6r7s8t",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_11",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Unknown"
+                    "value": "Unknown",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -36.1583,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 4465,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-04T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "f4g5h6i7-8j9k-0l1m-2n3o-4p5q6r7s8t9u",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_12",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Services"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -30.51,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 3790,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-05T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "g5h6i7j8-9k0l-1m2n-3o4p-5q6r7s8t9u0v",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_13",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Transportation"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -3.2966,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 412,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-06T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "h6i7j8k9-0l1m-2n3o-4p5q-6r7s8t9u0v1w",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_14",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Merchandise & Retail"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -87.875,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 17560,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-01T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "i7j8k9l0-1m2n-3o4p-5q6r-7s8t9u0v1w2x",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_15",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Food & Dining"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -47.69,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 9552,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-02T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "j8k9l0m1-2n3o-4p5q-6r7s-8t9u0v1w2x3y",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_16",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Unknown"
+                    "value": "Unknown",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -45.7475,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 9204,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-03T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "k9l0m1n2-3o4p-5q6r-7s8t-9u0v1w2x3y4z",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_17",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Transportation"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -17.1687,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2734,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-04T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "l0m1n2o3-4p5q-6r7s-8t9u-0v1w2x3y4z5a",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_18",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Services"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -11.65,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 1853,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-05T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "m1n2o3p4-5q6r-7s8t-9u0v-1w2x3y4z5a6b",
-                "account_id": "account789",
+                "transaction_id": "generated_transaction_id_19",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Other Services"
+                    "value": "Other Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -5.57,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 1123,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-06T00:00:00Z"
+                "month": 7
             }
         ],
         "success": true
@@ -973,298 +837,256 @@
         "account_id": "6r88582adf954cf6b3db6cc97bedccd9",
         "transactions": [
             {
-                "transaction_id": "a1b2c3d4-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_1",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Merchandise & Retail"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -81.256,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 8126,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-01T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "b2c3d4e5-6f7g-8h9i-0j1k-2l3m4n5o6p7q",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_2",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Travel/Entertainment"
+                    "value": "Travel/Entertainment",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -55.0257,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 5503,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-02T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "c3d4e5f6-7g8h-9i0j-1k2l-3m4n5o6p7q8r",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_3",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Food & Dining"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -26.5894,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2659,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-03T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "d4e5f6g7-8h9i-0j1k-2l3m-4n5o6p7q8r9s",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_4",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Transportation"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -20.6766,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2068,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-04T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "e5f6g7h8-9i0j-1k2l-3m4n-5o6p7q8r9s0t",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_5",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Services"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -20.0357,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2004,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-05T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "f6g7h8i9-0j1k-2l3m-4n5o-6p7q8r9s0t1u",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_6",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Other Services"
+                    "value": "Other Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -10.2848,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 1030,
+                    "unit": "g"
                 },
-                "datetime": "2023-05-06T00:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "g7h8i9j0-1k2l-3m4n-5o6p-7q8r9s0t1u2v",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_7",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Shopping"
+                    "value": "Shopping",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -121.2,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 12120,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-01T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "h8i9j0k1-2l3m-4n5o-6p7q-8r9s0t1u2v3w",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_8",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Unknown"
+                    "value": "Unknown",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -81.45,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 8145,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-02T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "i9j0k1l2-3m4n-5o6p-7q8r-9s0t1u2v3w4x",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_9",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Merchandise & Retail"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -50.7217,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 5072,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-03T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "j0k1l2m3-4n5o-6p7q-8r9s-0t1u2v3w4x5y",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_10",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Travel/Entertainment"
+                    "value": "Travel/Entertainment",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -41.3115,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 4131,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-04T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "k1l2m3n4-5o6p-7q8r-9s0t-1u2v3w4x5y6z",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_11",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Food & Dining"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -22.5754,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2257,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-05T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "l2m3n4o5-6p7q-8r9s-0t1u-2v3w4x5y6z7a",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_12",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Transportation"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -21.0614,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2106,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-06T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "m3n4o5p6-7q8r-9s0t-1u2v-3w4x5y6z7a8b",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_13",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Services"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -13.7475,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 1375,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-07T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "n4o5p6q7-8r9s-0t1u-2v3w-4x5y6z7a8b9c",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_14",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Other Services"
+                    "value": "Other Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -7.605,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 761,
+                    "unit": "g"
                 },
-                "datetime": "2023-06-08T00:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "o5p6q7r8-9s0t-1u2v-3w4x-5y6z7a8b9c0d",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_15",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Travel/Entertainment"
+                    "value": "Travel/Entertainment",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -47.854,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 4785,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-01T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "p6q7r8s9-0t1u-2v3w-4x5y-6z7a8b9c0d1e",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_16",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Other Services"
+                    "value": "Other Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -44.8793,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 4488,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-02T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "q7r8s9t0-1u2v-3w4x-5y6z-7a8b9c0d1e2f",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_17",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Services"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -43.718,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 4372,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-03T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "r8s9t0u1-2v3w-4x5y-6z7a-8b9c0d1e2f3g",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_18",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Merchandise & Retail"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -39.9215,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 3992,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-04T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "s9t0u1v2-3w4x-5y6z-7a8b-9c0d1e2f3g4h",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_19",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Food & Dining"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -20.2405,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2024,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-05T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "t0u1v2w3-4x5y-6z7a-8b9c-0d1e2f3g4h5i",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_20",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Transportation"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -13.3733,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 1337,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-06T00:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "u1v2w3x4-5y6z-7a8b-9c0d-1e2f3g4h5i6j",
-                "account_id": "account456",
+                "transaction_id": "generated_transaction_id_21",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "Health & Personal Care"
+                    "value": "Health & Personal Care",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -13.0,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 1300,
+                    "unit": "g"
                 },
-                "datetime": "2023-07-07T00:00:00Z"
+                "month": 7
             }
         ],
         "success": true
@@ -1273,270 +1095,244 @@
         "account_id": "94177e7a3daa4ef18746b355980ebd5f",
         "transactions": [
             {
-                "transaction_id": "62c12ecc-17d7-469f-9ecc-b08e00eb8c90",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_1",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.flight"
+                    "value": "Other Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -123.9,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 12390,
+                    "unit": "g"
                 },
-                "datetime": "2024-05-01T12:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "fa2e6d26-fb0f-49f5-bc8d-ccedbc1ca084",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_2",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.servicestations"
+                    "value": "Travel/Entertainment",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "amount": {
-                    "value": -54.3833,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 5438,
+                    "unit": "g"
                 },
-                "co2_model": "DE",
-                "datetime": "2024-05-02T12:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "d2683a28-c865-4f9d-9420-53aa029d84ff",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_3",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.flight"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -39.2081,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 3921,
+                    "unit": "g"
                 },
-                "datetime": "2024-05-03T12:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "fe624a2b-38d0-40f5-a92c-6bbf8433d22c",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_4",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.flight"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -30.3503,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 3035,
+                    "unit": "g"
                 },
-                "datetime": "2024-05-04T12:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "e9f1e39d-b1b0-4dcb-95cc-81314a63d7a2",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_5",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.flight"
+                    "value": "Health & Personal Care",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -16.23,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 1623,
+                    "unit": "g"
                 },
-                "datetime": "2024-05-05T12:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "fa06e844-98f5-478b-87ea-0e2b6e5f8371",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_6",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.flight"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -13.8837,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 1388,
+                    "unit": "g"
                 },
-                "datetime": "2024-05-06T12:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "e2b0d5ae-df35-4c9e-95a6-299b44c36c39",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_7",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.flight"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -6.26,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 626,
+                    "unit": "g"
                 },
-                "datetime": "2024-05-07T12:00:00Z"
+                "month": 5
             },
             {
-                "transaction_id": "d5b5c5b8-8a4c-4d16-8d7b-9f3b67d0c1a4",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_8",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.flight"
+                    "value": "Other Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "co2_model": "DE",
-                "amount": {
-                    "value": -52.895,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 5289,
+                    "unit": "g"
                 },
-                "datetime": "2024-06-01T12:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "a8b2f727-4d05-4854-8a1d-ef6c6e4ce2e5",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_9",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.servicestations"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "amount": {
-                    "value": -27.0041,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2700,
+                    "unit": "g"
                 },
-                "co2_model": "DE",
-                "datetime": "2024-06-02T12:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "f3b93b6a-5d0f-43f6-8d16-3b3b47e0f4b5",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_10",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.servicestations"
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "amount": {
-                    "value": -25.0958,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2509,
+                    "unit": "g"
                 },
-                "co2_model": "DE",
-                "datetime": "2024-06-03T12:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "b3e0ff7d-2e4b-4f23-83f5-cac5d8f0beed",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_11",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.servicestations"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "amount": {
-                    "value": -13.7303,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 1373,
+                    "unit": "g"
                 },
-                "co2_model": "DE",
-                "datetime": "2024-06-04T12:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "f2a42417-5997-4e2b-964c-43b347e8cc26",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_12",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.servicestations"
+                    "value": "Travel/Entertainment",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "amount": {
-                    "value": -8.43,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 843,
+                    "unit": "g"
                 },
-                "co2_model": "DE",
-                "datetime": "2024-06-05T12:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "dd59e1e3-7c89-479f-9065-7f6bc52b3bc7",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_13",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.servicestations"
+                    "value": "Health & Personal Care",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "amount": {
-                    "value": -4.46,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 753,
+                    "unit": "g"
                 },
-                "co2_model": "DE",
-                "datetime": "2024-06-06T12:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "af3a17bf-2e1e-4e99-a8e7-09b2eef7c2e7",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_14",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.servicestations"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "amount": {
-                    "value": -68.2766,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 446,
+                    "unit": "g"
                 },
-                "co2_model": "DE",
-                "datetime": "2024-07-01T12:00:00Z"
+                "month": 6
             },
             {
-                "transaction_id": "e2c30688-d4b6-4b1a-9f9f-8cf66a188bdb",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_15",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.servicestations"
+                    "value": "Travel/Entertainment",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "amount": {
-                    "value": -27.6273,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 6828,
+                    "unit": "g"
                 },
-                "co2_model": "DE",
-                "datetime": "2024-07-02T12:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "a7b36a72-8355-4f26-b8d7-1173d94f1f3c",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_16",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.servicestations"
+                    "value": "Food & Dining",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "amount": {
-                    "value": -26.6625,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2763,
+                    "unit": "g"
                 },
-                "co2_model": "DE",
-                "datetime": "2024-07-03T12:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "be2ef5ef-282f-4c64-b27b-ccf87a4e3d69",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_17",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.servicestations"
+                    "value": "Health & Personal Care",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "amount": {
-                    "value": -21.4733,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2666,
+                    "unit": "g"
                 },
-                "co2_model": "DE",
-                "datetime": "2024-07-04T12:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "fd1d5c22-82e2-417a-aad3-36b8e8d4e56f",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_18",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.servicestations"
+                    "value": "Services",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "amount": {
-                    "value": -15.6005,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 2147,
+                    "unit": "g"
                 },
-                "co2_model": "DE",
-                "datetime": "2024-07-05T12:00:00Z"
+                "month": 7
             },
             {
-                "transaction_id": "cb8f192f-50c4-44be-bcfa-1d531e3bc0d5",
-                "account_id": "a083e879-b37c-4307-9407-a9825d82800b",
+                "transaction_id": "generated_transaction_id_19",
                 "category": {
-                    "system": "ECOLYTIQ_V2",
-                    "value": "ex:transport.servicestations"
+                    "value": "Transportation",
+                    "system": "ECOLYTIQ_V2"
                 },
-                "amount": {
-                    "value": -3.1,
-                    "currency_code": "EUR"
+                "co2_footprint": {
+                    "value": 1560,
+                    "unit": "g"
                 },
-                "co2_model": "DE",
-                "datetime": "2024-07-06T12:00:00Z"
+                "month": 7
+            },
+            {
+                "transaction_id": "generated_transaction_id_20",
+                "category": {
+                    "value": "Merchandise & Retail",
+                    "system": "ECOLYTIQ_V2"
+                },
+                "co2_footprint": {
+                    "value": 310,
+                    "unit": "g"
+                },
+                "month": 7
             }
         ],
         "success": true

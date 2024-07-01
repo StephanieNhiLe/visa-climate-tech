@@ -276,26 +276,31 @@ def get_footprints():
 
 
 def process_monthly_spend_by_category_data(monthly_spend_category):
-    df = pd.DataFrame(monthly_spend_category, columns=['month', 're_category', 'total'])
+    df = pd.DataFrame(monthly_spend_category, columns=[
+                      'month', 're_category', 'total'])
     df['total'] = pd.to_numeric(df['total'], errors='coerce')
     df = df.dropna(subset=['total'])
 
-    df_pivot = df.pivot(index='month', columns='re_category', values='total').fillna(0)
+    df_pivot = df.pivot(index='month', columns='re_category',
+                        values='total').fillna(0)
     total_spend_by_month = df_pivot.sum(axis=1)
 
     total_spend_by_category = df_pivot.reset_index().to_dict(orient='records')
-    
+
     if total_spend_by_month.eq(0).any():
         return None, None, 'Cannot calculate percentages when total spend is zero for any month'
-    
-    monthly_spend_by_category_percent = df_pivot.divide(total_spend_by_month, axis=0) * 100
+
+    monthly_spend_by_category_percent = df_pivot.divide(
+        total_spend_by_month, axis=0) * 100
     highest_spent_category = df_pivot.idxmax(axis=1)
     highest_spent_categories = [
-        {'month': month, 're_category': category, 'amount': df_pivot.loc[month, category]}
+        {'month': month, 're_category': category,
+            'amount': df_pivot.loc[month, category]}
         for month, category in highest_spent_category.items()
     ]
 
     return total_spend_by_category, monthly_spend_by_category_percent, highest_spent_categories, None
+
 
 @app.route('/api/monthly_spend_by_category', methods=['POST'])
 def monthly_spend_by_category():
@@ -304,10 +309,12 @@ def monthly_spend_by_category():
         return error_response, status_code
 
     try:
-        monthly_spend_category = db_op.getMonthlySpendByCategory(data['account_id']) 
-        
+        monthly_spend_category = db_op.getMonthlySpendByCategory(
+            data['account_id'])
+
         if monthly_spend_category:
-            total_spend_by_category, monthly_spend_by_category_percent, highest_spent_categories, error_message = process_monthly_spend_by_category_data(monthly_spend_category)
+            total_spend_by_category, monthly_spend_by_category_percent, highest_spent_categories, error_message = process_monthly_spend_by_category_data(
+                monthly_spend_category)
             if error_message:
                 return jsonify({
                     'success': False,
@@ -331,6 +338,7 @@ def monthly_spend_by_category():
             'success': False,
             'message': f'An error occurred: {ex}'
         }), 500
+
 
 @app.route('/api/learn_more', methods=['POST'])
 def learn_more():
@@ -396,6 +404,6 @@ def learn_more():
         'success': True,
         'message': message}
     ), 200
-  
+
 if __name__ == '__main__':
     app.run(debug=True)

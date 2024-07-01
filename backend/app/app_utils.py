@@ -50,6 +50,7 @@ def get_response_object(required_fields) -> ResponseObject:
                           status_code=STATUS_CODE_OK)
 
 
+# {"MAY": { "Food": "123", "Transport": "221"} "JUNE": {"SHOPPING": 999}}
 def get_mock_ecolytiqs_response_object(account_id: str, transaction_parameters: dict):
     data = getCarbonFootPrintCache()
 
@@ -66,8 +67,22 @@ def get_mock_ecolytiqs_response_object(account_id: str, transaction_parameters: 
     response_data = next(
         entry for entry in data if entry["account_id"] == account_id)
 
+    monthCategoryCarbonSummaryMap = dict()
+    for entry in response_data["transactions"]:
+        month = entry["month"]
+        category = entry["category"]["value"]
+        co2_value = entry["co2_footprint"]["value"]
+
+        if month in monthCategoryCarbonSummaryMap:
+            if category in monthCategoryCarbonSummaryMap[month]:
+                monthCategoryCarbonSummaryMap[month][category] += co2_value
+            else:
+                monthCategoryCarbonSummaryMap[month][category] = co2_value
+        else:
+            monthCategoryCarbonSummaryMap[month] = dict()
+
     return ResponseObject(expected_response=jsonify(
-        {'success': True, 'transactions': response_data["transactions"]}),
+        {'success': True, 'transactions': monthCategoryCarbonSummaryMap}),
         error_response=None,
         status_code=STATUS_CODE_OK
     )
