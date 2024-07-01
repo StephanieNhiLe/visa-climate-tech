@@ -1,0 +1,35 @@
+
+@keyframes slideInRight{
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .hidden {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  .slide-in-right {
+    animation: slideInRight 1.5s ease-in-out forwards;
+  }
+  
+  .delay-0 {
+    animation-delay: 0s;
+  }
+  
+  .delay-1 {
+    animation-delay: 0.2s;
+  }
+  
+  .delay-2 {
+    animation-delay: 0.4s;
+  }
+  
+  /* Add more delay classes as needed */
+  

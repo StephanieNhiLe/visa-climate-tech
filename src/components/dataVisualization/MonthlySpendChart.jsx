@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, ReferenceLine } from 'recharts';
 
 const formatYAxis = (value) => {
   if (value >= 1000) {
@@ -15,13 +15,15 @@ const monthNames = {
   7: 'July'
 };
 
-const MonthlySpendChart = () => {
+const MonthlySpendChart = ({accountId}) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [hoveredMonth, setHoveredMonth] = useState(6);
+  const [averageSpend, setAverageSpend] = useState(null);
 
   useEffect(() => {
     fetchMonthlySpend();  
+    fetchOverallAvgSpend();
   }, []);
 
   const fetchMonthlySpend = () => {
@@ -30,7 +32,7 @@ const MonthlySpendChart = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ account_id: '5a73582adf954cf6b3db6cc97bedccd9' }) // Make sure to use the correct account_id
+      body: JSON.stringify({ account_id: accountId })  
     })
     .then(response => {
       if (!response.ok) {
@@ -52,6 +54,19 @@ const MonthlySpendChart = () => {
     });
   };
 
+  const fetchOverallAvgSpend = () => {
+    axios.post('http://127.0.0.1:5000/api/overall_avg_spend', { account_id: accountId })
+      .then(response => {
+        if (response.data.success) {
+          setAverageSpend(parseFloat(response.data.overall_avg_spend));
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching overall average spend:', error);
+        setError('Error fetching overall average spend');
+      });
+  };
+
   if (error) {
     return <p>{error}</p>;
   }
@@ -64,9 +79,11 @@ const MonthlySpendChart = () => {
 
   return (
     <div>
+      <h2 className='text-teal-900 font-semibold text-xl'>Spending Summary</h2>
+
       <h2>{monthNames[hoveredMonth]} Summary</h2>
-      <p>Total Spend: {formatYAxis(parseFloat(currentMonthData.total))}</p>
-      <ResponsiveContainer width="100%" height={400}>
+      <p className='text-2xl'>${(parseFloat(currentMonthData.total)).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+      <ResponsiveContainer width="100%" height={300}>
         <BarChart 
           data={data} 
           margin={{ top: 20, right: 20, bottom: 5 }}
@@ -80,13 +97,27 @@ const MonthlySpendChart = () => {
           <XAxis dataKey="month" tickFormatter={(month) => monthNames[month]}/>
           <YAxis tickFormatter={formatYAxis} />
           <Tooltip 
-            formatter={(value) => `$${parseFloat(value).toFixed(2)}`} 
+            formatter={(value) => `$${parseFloat(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`} 
             labelFormatter={(month) => monthNames[month]}
           />
-          <Legend />
           <Bar dataKey="total" fill="#008080" name="Total Spend" />
+          {averageSpend && (
+            <ReferenceLine 
+              y={averageSpend} 
+              stroke="grey" 
+              strokeDasharray="5 5" 
+            />
+          )}
         </BarChart>
       </ResponsiveContainer>
+      <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <p>Spending Summary</p>
+        <p>${parseFloat(currentMonthData.total).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+      </div>
+      <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <p style={{ fontWeight: '500' }}>Average Spending</p>
+        <p style={{ color: 'teal', fontWeight: '500'  }}>${(averageSpend).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+      </div>
     </div>
   );
 };
