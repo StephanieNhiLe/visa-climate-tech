@@ -1,9 +1,13 @@
 from database.database_operations import DB_Operation
+from .app_utils import get_response_object, STATUS_CODE_INTERNAL_SERVER_ERROR, STATUS_CODE_OK, STATUS_CODE_NOT_FOUND
+
 from flask_cors import CORS
 from flask import Flask, request, jsonify
+
 import requests
 from requests.auth import HTTPBasicAuth
-from dotenv import dotenv_values 
+
+from dotenv import dotenv_values
 import sys
 sys.path.append("..")
 
@@ -15,35 +19,27 @@ CORS(app, origins='*', allow_headers=[
     "Access-Control-Allow-Credentials"],
     supports_credentials=True)
 
-def get_json_or_error(required_fields):
-    data = request.get_json()
-    if not data:
-        return None, jsonify({'success': False, 'message': 'Data is required'}), 400
-
-    missing_fields = [field for field in required_fields if not data.get(field)]
-    if missing_fields:
-        return None, jsonify({'success': False, 'message': f"{', '.join(missing_fields)} are required"}), 400
-    
-    return data, None, None
 
 @app.route('/api/businesses', methods=['POST'])
-def get_businesses():  
-    data, error_response, status_code = get_json_or_error(['category'])
+def get_businesses():
+    data, error_response, status_code = get_response_object(['category'])
+
     if error_response:
         return error_response, status_code
-    
-    try: 
+
+    try:
         business_data = db_op.getBusinessDetails(data['category'])
         if business_data:
             return jsonify({
                 'success': True,
                 'businesses': business_data
-            }), 200
+            }), STATUS_CODE_OK
     except Exception as e:
         return jsonify({
             'success': False,
             'message': f'An error occurred: {e}'
-        }), 500 
+        }), STATUS_CODE_INTERNAL_SERVER_ERROR
+
 
 @app.route('/api/messages', methods=['GET'])
 def get_data():
@@ -51,12 +47,15 @@ def get_data():
         'message': "successful!"
     })
 
+
 @app.route('/api/account_details', methods=['POST'])
 def account_details():
-    data, error_response, status_code = get_json_or_error(['username', 'password'])
+    data, error_response, status_code = get_response_object(
+        ['username', 'password'])
+
     if error_response:
         return error_response, status_code
-    
+
     try:
 
         account_info = db_op.getUserAccount(data['username'], data['password'])
@@ -68,50 +67,54 @@ def account_details():
                 "first_name": account_info.first_name,
                 "last_name": account_info.last_name,
                 "persona": account_info.persona
-            }), 200
+            }), STATUS_CODE_OK
         else:
             return jsonify({
                 "access": False,
                 "message": "User account does not exist"
-            }), 404
+            }), STATUS_CODE_NOT_FOUND
 
     except Exception as ex:
         return jsonify({
             "access": False,
             "message": f"An error occured with exeption {ex}"
-        }), 500
+        }), STATUS_CODE_INTERNAL_SERVER_ERROR
+
 
 @app.route('/api/verify_user', methods=['POST'])
 def verify_user():
-    data, error_response, status_code = get_json_or_error(['username', 'password'])
+    data, error_response, status_code = get_response_object(
+        ['username', 'password'])
     if error_response:
         return error_response, status_code
 
     try:
 
-        has_account = db_op.checkUserHasAccount(data['username'], data['password'])
+        has_account = db_op.checkUserHasAccount(
+            data['username'], data['password'])
 
         if has_account:
             return jsonify({
                 'success': True,
                 'message': 'User account exists'
-            }), 200
+            }), STATUS_CODE_OK
 
         else:
             return jsonify({
                 'success': False,
                 'message': 'User account does not exist'
-            }), 404
+            }), STATUS_CODE_NOT_FOUND
 
     except Exception as ex:
         return jsonify({
             'success': False,
             'message': f'An error occurred: {ex}'
-        }), 500
-    
+        }), STATUS_CODE_INTERNAL_SERVER_ERROR
+
+
 @app.route('/api/monthly_spend', methods=['POST'])
 def monthly_spend():
-    data, error_response, status_code = get_json_or_error(['account_id'])
+    data, error_response, status_code = get_response_object(['account_id'])
     if error_response:
         return error_response, status_code
 
@@ -131,17 +134,18 @@ def monthly_spend():
                         'maximum': item.maximum
                     } for item in monthly_spend_data
                 ]
-            }), 200
+            }), STATUS_CODE_OK
 
     except Exception as ex:
         return jsonify({
             'success': False,
             'message': f'An error occurred: {ex}'
-        }), 500
-    
+        }), STATUS_CODE_INTERNAL_SERVER_ERROR
+
+
 @app.route('/api/overall_avg_spend', methods=['POST'])
 def overall_avg_spend():
-    data, error_response, status_code = get_json_or_error(['account_id'])
+    data, error_response, status_code = get_response_object(['account_id'])
     if error_response:
         return error_response, status_code
 
@@ -152,20 +156,23 @@ def overall_avg_spend():
             return jsonify({
                 'success': True,
                 'overall_avg_spend': overall_avg_spend_data
-            }), 200
+            }), STATUS_CODE_OK
 
     except Exception as ex:
         return jsonify({
             'success': False,
             'message': f'An error occurred: {ex}'
-        }), 500
+        }), STATUS_CODE_INTERNAL_SERVER_ERROR
+
 
 @app.route('/api/get_access_token', methods=['POST'])
 def get_access_token():
     secrets = dotenv_values("../../.env")
-    token_url = 'https://api.staging.ecolytiq.arm.ecolytiq.network/oauth/token' 
+
+    token_url = 'https://api.staging.ecolytiq.arm.ecolytiq.network/oauth/token'
     client_id = secrets['CLIENT_ID']
     client_secret = secrets['CLIENT_SECRET']
+
     grant_type = 'client_credentials'
     scope = 'all'
 
@@ -179,14 +186,16 @@ def get_access_token():
 
     response = requests.post(token_url, auth=auth, headers=headers, data=data)
 
-    if response.status_code == 200:
+    if response.status_code == STATUS_CODE_OK:
         return jsonify(response.json())
     else:
         return jsonify({'error': 'Failed to obtain access token'}), response.status_code
 
+
 @app.route('/api/avg_spend_per_month', methods=['POST'])
 def avg_spend_per_month():
-    data, error_response, status_code = get_json_or_error(['account_id'])
+    data, error_response, status_code = get_response_object(['account_id'])
+
     if error_response:
         return error_response, status_code
 
@@ -196,25 +205,26 @@ def avg_spend_per_month():
             return jsonify({
                 'success': True,
                 'data': [
-                {
-                    'month': item.month,
-                    're_category': item.re_category,
-                    'avg_spend': float(item.avg_spend),
-                    'rank': item.rank
-                } for item in avg_spend_per_month
-            ]
-            }), 200
+                    {
+                        'month': item.month,
+                        're_category': item.re_category,
+                        'avg_spend': float(item.avg_spend),
+                        'rank': item.rank
+                    } for item in avg_spend_per_month
+                ]
+            }), STATUS_CODE_OK
         else:
             return jsonify({
                 'success': False,
                 'message': 'No data found'
-            }), 404
+            }), STATUS_CODE_NOT_FOUND
 
     except Exception as ex:
         return jsonify({
             'success': False,
             'message': f'An error occurred: {ex}'
-        }), 500
+        }), STATUS_CODE_INTERNAL_SERVER_ERROR
+
 
 if __name__ == '__main__':
     app.run(debug=True)
