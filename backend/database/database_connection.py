@@ -43,8 +43,7 @@ class database_connection:
             print("Database connection established.")
             return connection
         except pyodbc.Error as ex:
-            print(f"Error connecting to the database: {ex}")
-            raise
+            raise f"Error connecting to the database: {ex}, assert the docker container is on and paramters are configured right"
 
     def get_connection(self):
         return self.connection
