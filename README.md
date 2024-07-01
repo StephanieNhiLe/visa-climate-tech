@@ -59,7 +59,7 @@ pip3 list
 Install flask, openai and dontenv which allows us to use enviroment variables
 
 ```
-pip3 install flask openai python-dotenv
+pip3 install flask openai python-dotenv requests
 ```
 
 - In this section lets actually run the flask application from `main.py`. We will first have to navigate to our app `backend/app` Assuming you are at the root of the project

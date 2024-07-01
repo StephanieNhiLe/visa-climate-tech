@@ -16,6 +16,7 @@ MonthlySpendByCategory = namedtuple(
     'MonthlySpendByCategory', ['month', 're_category', 'total'])
     
 
+
 class DB_Operation:
     def __init__(self):
         db_connection = database_connection()
@@ -58,16 +59,14 @@ class DB_Operation:
 
     def getAvgSpendPerMonth(self, account_id: int):
         query = getAvgSpendPerMonth(account_id)
-        print(f"Executing query: {query}") 
-        print(f"Account ID: {account_id}") 
+
         try:
             cursor = self._connection.cursor()
             cursor.execute(query)
             data = cursor.fetchall()
-            print(f"Data fetched: {data}")
-            
+
             formatted_data = [AvgSpendPerMonth(*row) for row in data]
-            return formatted_data 
+            return formatted_data
         except pyodbc.Error as ex:
             print(f"Error querying the database: {ex}")
             raise
@@ -84,7 +83,7 @@ class DB_Operation:
         except pyodbc.Error as ex:
             print(f"Error querying the database: {ex}")
             raise
-    
+
     def getMonthlySpendSummary(self, account_id: str) -> list:
         query = getMonthlySpendSum(account_id)
         try:
@@ -104,11 +103,13 @@ class DB_Operation:
             cursor = self._connection.cursor()
             cursor.execute(query)
 
-            data = cursor.fetchone()[0] 
+            data = cursor.fetchone()[0]
             return data
         except pyodbc.Error as ex:
             print(f"Error querying the database: {ex}")
             raise
+
+
 
     def getMonthlySpendByCategory(self, account_id: str) -> list:
         query = getMonthlySpendByCategory(account_id)
@@ -122,6 +123,7 @@ class DB_Operation:
         except pyodbc.Error as ex:
             print(f"Error querying the database: {ex}")
             raise
+
 
 if __name__ == "__main__":
     # Sample ways this script would work mainly for testing
