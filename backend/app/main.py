@@ -131,8 +131,10 @@ def learn_more():
     time_frame = data.get("timeFrame", None)
     carbon_foot_print_metric = data.get("footPrintMetric", None)
     extra_context = data.get("context", "")
+    transportation_details = data.get("transportationDetails", None)
+    household_size = data.get("householdSize", None)
 
-    if not purchases or not time_frame or not carbon_foot_print_metric:
+    if not purchases or not time_frame or not carbon_foot_print_metric or not transportation_details or not household_size:
         missing_fields = []
 
         if not purchases:
@@ -141,12 +143,16 @@ def learn_more():
             missing_fields.append("timeFrame is missing")
         if not carbon_foot_print_metric:
             missing_fields.append("footPrintMetric is missing")
+        if not transportation_details:
+            missing_fields.append("transportationDetails is missing")
+        if not household_size:
+            missing_fields.append("householdSize is missing")
 
         debug_message = "; ".join(missing_fields)
 
         return jsonify({
             'success': False,
-            'message': 'purchases, timeFrame and footprintMetric need to be provided in order to give a useful suggestion',
+            'message': 'purchases, timeFrame, footprintMetric, transportationDetails, and householdSize need to be provided in order to give a useful suggestion',
             'debugMessage': debug_message + " please note the spellings of each feild"
         }), 404
 
@@ -154,7 +160,10 @@ def learn_more():
                                 purchases=purchases,
                                 timeframe=time_frame,
                                 carbon_footPrint=carbon_foot_print_metric,
-                                context=extra_context)
+                                context=extra_context,
+                                transportationDetails=transportation_details,
+                                householdSize=household_size
+                                )
 
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
