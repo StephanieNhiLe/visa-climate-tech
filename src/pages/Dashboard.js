@@ -9,7 +9,7 @@ import DataList from '../components/recombox'
 function Dashboard() {
   return (
     <div>
-      <h1 className='flex font-bold text-3xl text-teal-950 mt-5 ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6'>Dashboard</h1>
+      <h1 className='flex font-bold text-3xl text-teal-950 mt-5 ml-60 pl-6 space-y-6 md:space-y-0 md:space-x-6'>Dashboard</h1>
       <div className="flex flex-row justify-around ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6">
 
         {/* Financial Trend Section */}

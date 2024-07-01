@@ -4,10 +4,11 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  overflow: auto;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -19,12 +20,12 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 50vh;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 1.5vmin);
   color: white;
 }
 
@@ -46,16 +47,19 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-} 
-
-.with-sidebar{
-	margin-left: 15%;
-  display: flex;
+  overflow: auto;
 }
 
-@media only screen and (max-width: 768px){
-	.with-sidebar{
-		width: 100%;
-		margin-left: 0;
-	}
+.with-sidebar {
+  margin-left: 10%;
+  display: flex;
+  flex: 1;
+  overflow: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .with-sidebar {
+    width: 100%;
+    margin-left: 0;
+  }
 }

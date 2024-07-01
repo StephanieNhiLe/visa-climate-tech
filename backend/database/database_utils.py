@@ -73,7 +73,7 @@ def getBusinessDetails(category):
         [category] = '{category}'
     """
 
-def getMonthlySpendSummary(account_id):
+def getMonthlySpendSum(account_id):
     return f"""
     SELECT 
         Month,

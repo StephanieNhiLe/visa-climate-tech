@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Activity from './pages/Activity';
 import Analytics from './pages/Analytics';
 import Transactions from './pages/Transactions';
+import MonthlySpendChart from './components/dataVisualization/MonthlySpendChart';
 
 function App() {
   const [message, setMessage] = useState('Loading...');
@@ -38,7 +39,7 @@ function App() {
     .catch(error => console.error('Error fetching access token:', error));
   };
 
-  // Test API Message
+  // Test API Message - Sample 
   const fetchMessage = (token) => {
     fetch('http://127.0.0.1:5000/api/messages', {
       method: 'GET',
@@ -58,41 +59,34 @@ function App() {
       	<div className="Sidebar">
 				  <Sidebar visible={ navVisible } show={setNavVisible} />
           <Routes>
-            <Route path='/dashboard' element={<><Dashboard /><div className={!navVisible ? "page" : "page with-sidebar"}>
-            </div></>
+            <Route path="/" element={<Navigate to="/dashboard" />} />
+            <Route path='/dashboard' element={
+              <><Dashboard /><div className={!navVisible ? "page" : "page with-sidebar"}>
+              </div></>
             } />
-            <Route path='/activity' element={ <><Activity /><div className={!navVisible ? "page" : "page with-sidebar"}>
-                <h1>Activity</h1>
+            <Route path='/activity' element={
+              <><Activity /><div className={!navVisible ? "page" : "page with-sidebar"}>
+                <h1 className={'flex font-bold text-3xl text-teal-950 ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6'}>Activity</h1>
               </div></>
             }/>
-            <Route path='/analytics' element={<><Analytics /><div className={!navVisible ? "page" : "page with-sidebar"}>
-                <h1>Analytics</h1>
+            <Route path='/analytics' element={
+              <><Analytics /><div className={!navVisible ? "page" : "page with-sidebar"}>
+                <h1 className={'flex font-bold text-3xl text-teal-950 ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6'}>Analytics</h1>
               </div></>
             }/>
             <Route path='/transactions' element={<> <Transactions />
               <div className={!navVisible ? "page" : "page with-sidebar"}>
-                <h1>Transactions</h1>
+                <h1 className={'flex font-bold text-3xl text-teal-950 ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6'}>Transactions</h1>
               </div></>
             }/>
                 <Route path='/logout' element={
               <div className={!navVisible ? "page" : "page with-sidebar"}>
-                <h1>Logout</h1>
+                <h1 className={'flex font-bold text-3xl text-teal-950 ml-60 p-6 space-y-6 md:space-y-0 md:space-x-6'}>Logout</h1>
               </div>
             }/>
           </Routes>
-        </div>
-        <div>
-              {/* <div className="App">
-              <header className="App-header">
-                <p>The message is {message}</p>
-              </header>
-            </div> */}
-        </div>
+        </div> 
       </BrowserRouter>
-      {/* <div className="App">
-        <h1>Monthly Spend Summary</h1>
-        <MonthlySpendChart /> 
-      </div> */}
     </div>
   );
 }

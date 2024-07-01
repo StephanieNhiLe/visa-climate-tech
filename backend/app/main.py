@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask import Flask, request, jsonify
 import requests
 from requests.auth import HTTPBasicAuth
-
+from dotenv import dotenv_values 
 import sys
 sys.path.append("..")
 
@@ -162,9 +162,10 @@ def overall_avg_spend():
 
 @app.route('/api/get_access_token', methods=['POST'])
 def get_access_token():
-    token_url = 'https://api.staging.ecolytiq.arm.ecolytiq.network/oauth/token'
-    client_id = 'KdgcLkSCgaX0p1SL84r0AU2n4P3G8XaMaH29'
-    client_secret = 'cgdfk8buY5u4FHcMvTPRlQJRMFJJuzZtw2iwQih78NMxe0Jr'
+    secrets = dotenv_values("../../.env")
+    token_url = 'https://api.staging.ecolytiq.arm.ecolytiq.network/oauth/token' 
+    client_id = secrets['CLIENT_ID']
+    client_secret = secrets['CLIENT_SECRET']
     grant_type = 'client_credentials'
     scope = 'all'
 
