@@ -82,7 +82,19 @@ export default function LineChart() {
 
   // Helper function to format date
   const formatDate = (date) => {
-    return date.toLocaleDateString();
+    try {
+      date = new Date(date);
+      if (date === null) {
+        return '';
+      }
+      else {
+        return date.toLocaleDateString();
+      }
+    }
+    catch (error) {
+      console.error('Error formatting date:', error);
+      return '';
+    }  
   };
 
   return (
