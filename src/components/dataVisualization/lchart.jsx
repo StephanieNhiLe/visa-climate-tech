@@ -68,19 +68,16 @@ export default function LineChart() {
 
     setChartData({ labels: dates, datasets });
 
-    // Update the title based on the selected date range
     setTitle(`Date Range: ${formatDate(startDate)} - ${formatDate(endDate)}`);
   }, [startDate, endDate]);
 
-  // Function to generate random color for datasets
   const getRandomColor = (opacity = 1) => {
     const r = Math.floor(Math.random() * 255);
     const g = Math.floor(Math.random() * 255);
     const b = Math.floor(Math.random() * 255);
     return `rgba(${r},${g},${b},${opacity})`;
   };
-
-  // Helper function to format date
+  
   const formatDate = (date) => {
     try {
       date = new Date(date);
